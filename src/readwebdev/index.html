@@ -13,259 +13,278 @@
     h3:after {
       content: " }";
     }
+
+    article {
+      display: none;
+    }
+
+    .display {
+      display: block;
+    }
+
+    h2 {
+      cursor: default;
+    }
+
+    h3, h4 {
+      cursor: pointer;
+    }
   </style>
   <title>Webdev Reading List</title>
 </head>
   <body>
     <h1><a href="">Webdev Reading List</a></h1>
-    <h2>Table of Contents</h2>
-    <nav class="toc"></nav>
     <main>
-      <h2>Preamble</h2>
-      <p>
-        Books and articles that I've read or plan to read. Good stuff.
-      </p>
+      <div>
+        <h2>Preamble</h2>
+        <p>
+          Books and articles that I've read or plan to read. Good stuff.
+        </p>
+      </div>
 
-      <h2>The Languages</h2>
-      <h3>HTML and CSS</h3>
+      <div>
+        <h2>The Languages</h2>
+        <div>
+          <h3>HTML and CSS</h3>
+          <section>
+            <h4>Beginner</h4>
+            <article>
+              <a href="https://en.wikipedia.org/wiki/HTML">HTML - Wikipedia</a>
+              <ul>
+                <li>An overview of HTML</li>
+              </ul>
+            </article>
 
-      <section>
-        <h4>Beginner</h4>
-        <article>
-          <a href="https://en.wikipedia.org/wiki/HTML">HTML - Wikipedia</a>
-          <ul>
-            <li>An overview of HTML</li>
-          </ul>
-        </article>
+            <article>
+              <a href="https://www.codecademy.com/tracks/web">
+                Codecademy - HTML&CSS
+              </a>
+              <ul>
+                <li>Quite helpful if you’re learning-by-doing type of learner</li>
+                <li>It’s very basic; much more work is needed</li>
+              </ul>
+            </article>
 
-        <article>
-          <a href="https://www.codecademy.com/tracks/web">
-            Codecademy - HTML&CSS
-          </a>
-          <ul>
-            <li>Quite helpful if you’re learning-by-doing type of learner</li>
-            <li>It’s very basic; much more work is needed</li>
-          </ul>
-        </article>
+            <article>
+              <a href="http://headfirstlabs.com/books/hfhtml/">
+                Head First HTML and CSS
+              </a>
+              <ul>
+                <li>Gentle introduction with exercises.</li>
+                <li>Might be slow for people who with previous experiences.</li>
+                <li>Also it’s a rather old book. Fortunately HTML is mostly backward compatible.</li>
+              </ul>
+            </article>
 
-        <article>
-          <a href="http://headfirstlabs.com/books/hfhtml/">
-            Head First HTML and CSS
-          </a>
-          <ul>
-            <li>Gentle introduction with exercises.</li>
-            <li>Might be slow for people who with previous experiences.</li>
-            <li>Also it’s a rather old book. Fortunately HTML is mostly backward compatible.</li>
-          </ul>
-        </article>
+            <article>
+              <a href="http://html5doctor.com/element-index/">Index of HTML5 Element</a>
+              <ul>
+                <li>
+                  Quick reference of all HTML5 elements. It’s like the Specification, but better formatted and easier to read.
+                </li>
+                <li>
+                  Read through to check for unknown unknowns.
+                </li>
+              </ul>
+            </article>
+          </section>
 
-        <article>
-          <a href="http://html5doctor.com/element-index/">Index of HTML5 Element</a>
-          <ul>
-            <li>
-              Quick reference of all HTML5 elements. It’s like the Specification, but better formatted and easier to read.
-            </li>
-            <li>
-              Read through to check for unknown unknowns.
-            </li>
-          </ul>
-        </article>
-      </section>
+          <section>
+            <h4>Intermediate</h4>
+            <article>
+              <a href="http://shop.oreilly.com/product/9780596527334.do">
+                CSS: The Definitive Guide
+              </a>
+              <ul>
+                <li>
+                  A very detailed description of the CSS syntax. No exercises.
+                </li>
+                <li>
+                  Only introduces up to CSS 2.1.
+                </li>
+                <li>
+                  4th version partly available <a href="http://meyerweb.com/eric/thoughts/2015/10/13/csstdg-update/">here</a>
+                </li>
+              </ul>
+            </article>
+          </section>
 
-      <section>
-        <h4>Intermediate</h4>
-        <article>
-          <a href="http://shop.oreilly.com/product/9780596527334.do">
-            CSS: The Definitive Guide
-          </a>
-          <ul>
-            <li>
-              A very detailed description of the CSS syntax. No exercises.
-            </li>
-            <li>
-              Only introduces up to CSS 2.1.
-            </li>
-            <li>
-              4th version partly available <a href="http://meyerweb.com/eric/thoughts/2015/10/13/csstdg-update/">here</a>
-            </li>
-          </ul>
-        </article>
-      </section>
+          <section>
+            <h4>Advanced</h4>
+            <article>
+              <a href="https://html.spec.whatwg.org/multipage/">
+                The HTML Standard (WHATWG)
+              </a>
+            </article>
 
-      <section>
-        <h4>Advanced</h4>
-        <article>
-          <a href="https://html.spec.whatwg.org/multipage/">
-            The HTML Standard (WHATWG)
-          </a>
-        </article>
+            <article>
+              <a href="http://www.w3.org/TR/html5/">
+                The HTML5.0 Standard (W3C)
+              </a>
+            </article>
 
-        <article>
-          <a href="http://www.w3.org/TR/html5/">
-            The HTML5.0 Standard (W3C)
-          </a>
-        </article>
+            <article>
+              <a href="http://www.w3.org/TR/CSS2/">
+                The CSS Specification 2.1
+              </a>
+            </article>
 
-        <article>
-          <a href="http://www.w3.org/TR/CSS2/">
-            The CSS Specification 2.1
-          </a>
-        </article>
+            <article>
+              <a href="http://www.w3.org/Style/CSS/specs.en.html">
+                The Current CSS Specifications
+              </a>
+            </article>
 
-        <article>
-          <a href="http://www.w3.org/Style/CSS/specs.en.html">
-            The Current CSS Specifications
-          </a>
-        </article>
+            <article>
+              <a href="https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html">
+                The XMLHttpRequest Specification
+              </a>
+            </article>
+          </section>
 
-        <article>
-          <a href="https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html">
-            The XMLHttpRequest Specification
-          </a>
-        </article>
-      </section>
+          <section>
+            <h4>Supplementary</h4>
+            <article>
+              <a href="http://diveintohtml5.info/">
+                Dive into HTML5
+              </a>
+              <ul>
+                <li>
+                  Pleasant read with anecdotes and little humours
+                </li>
+                <li>
+                  Moderately useful
+                </li>
+                <li>
+                  Maintenance ended in early 2011, which is an ancient era for Web
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
 
-      <section>
-        <h4>Supplementary</h4>
-        <article>
-          <a href="http://diveintohtml5.info/">
-            Dive into HTML5
-          </a>
-          <ul>
-            <li>
-              Pleasant read with anecdotes and little humours
-            </li>
-            <li>
-              Moderately useful
-            </li>
-            <li>
-              Maintenance ended in early 2011, which is an ancient era for Web
-            </li>
-          </ul>
-        </article>
-      </section>
+        <h3>JavaScript, DOM, and BOM</h3>
+        <section>
+          <h4>Beginner</h4>
+          <article>
+            <a href="https://en.wikipedia.org/wiki/JavaScript">
+              JavaScript - Wikipedia
+            </a>
+          </article>
 
-      <h3>JavaScript, DOM, and BOM</h3>
-      <section>
-        <h4>Beginner</h4>
-        <article>
-          <a href="https://en.wikipedia.org/wiki/JavaScript">
-            JavaScript - Wikipedia
-          </a>
-        </article>
-
-        <article>
-          <a href="https://www.codecademy.com/tracks/javascript">
-            Codecademy - JavaScript
-          </a>
-          <ul>
-            <li>
-              A very basic look into the essentials
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <section>
-        <h4>Intermediate</h4>
-        <article>
-          <a href="http://shop.oreilly.com/product/9780596517748.do">
-            JavaScript: The Good Parts
-          </a>
-          <ul>
-            <li>
-              Nice little book about the key features of JavaScript.
-            </li>
-            <li>
-              Very opinionated, but seems reasonable.
-            </li>
-          </ul>
-        </article>
-
-        <article>
-          <a href="http://shop.oreilly.com/product/9781118026694.do">
-            Professional JavaScript for Web Developers
-          </a>
-          <ul>
-            <li>
-              Comprehensive and detailed introduction to JavaScript the language and DOM and relevant technologies
-            </li>
-            <li>
-              Update in 2011, recent enough
-            </li>
-          </ul>
-        </article>
-
-        <article>
-          <a href="https://ponyfoo.com/articles/es6">
-            ES6 Overview in 350 Bulletpoints
-          </a>
-          <ul>
-            <li>
-              Useful for covering unknown unknowns
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <section>
-        <h4>Advanced</h4>
-        <article>
-          <a href="http://www.ecma-international.org/ecma-262/6.0/">
-            ECMAScript 2015 Language Specification
-          </a>
-        </article>
-
-        <article>
-          <a href="http://www.w3.org/DOM/DOMTR">
-            DOM Specifications
-          </a>
-        </article>
-      </section>
-
-      <section>
-        <h4>Supplementary</h4>
-        <article>
-          <a href="http://perfectionkills.com/javascript-quiz/">
-            JavaScript Quiz
-          </a>
-        </article>
-        <article>
-          <a href="http://perfectionkills.com/javascript-quiz-es6/">
-            JavaScript Quiz. ES6 edition.
-          </a>
-        </article>
-        <article>
-          <a href="https://github.com/getify/You-Dont-Know-JS">
-            You Don’t Know JS
-          </a>
-        </article>
-        <article>
-          <a href="http://youmightnotneedjquery.com/">
-            You might not need jQuery
+          <article>
+            <a href="https://www.codecademy.com/tracks/javascript">
+              Codecademy - JavaScript
+            </a>
             <ul>
               <li>
-                Nice collection of frequent operations; useful even for those
-                who don't use jQuery (like myself)
+                A very basic look into the essentials
               </li>
             </ul>
-          </a>
-        </article>
-      </section>
+          </article>
+        </section>
 
-      <section>
-        <h4>Reference</h4>
-        <article>
-          <a href="https://developer.mozilla.org">
-            Mozilla Developer Network
-          </a>
-          <ul>
-            <li>
-              Very comprehensive reference HTML, CSS, JavaScript, and more, filled with examples
-            </li>
-          </ul>
-        </article>
-      </section>
+        <section>
+          <h4>Intermediate</h4>
+          <article>
+            <a href="http://shop.oreilly.com/product/9780596517748.do">
+              JavaScript: The Good Parts
+            </a>
+            <ul>
+              <li>
+                Nice little book about the key features of JavaScript.
+              </li>
+              <li>
+                Very opinionated, but seems reasonable.
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <a href="http://shop.oreilly.com/product/9781118026694.do">
+              Professional JavaScript for Web Developers
+            </a>
+            <ul>
+              <li>
+                Comprehensive and detailed introduction to JavaScript the language and DOM and relevant technologies
+              </li>
+              <li>
+                Update in 2011, recent enough
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <a href="https://ponyfoo.com/articles/es6">
+              ES6 Overview in 350 Bulletpoints
+            </a>
+            <ul>
+              <li>
+                Useful for covering unknown unknowns
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h4>Advanced</h4>
+          <article>
+            <a href="http://www.ecma-international.org/ecma-262/6.0/">
+              ECMAScript 2015 Language Specification
+            </a>
+          </article>
+
+          <article>
+            <a href="http://www.w3.org/DOM/DOMTR">
+              DOM Specifications
+            </a>
+          </article>
+        </section>
+
+        <section>
+          <h4>Supplementary</h4>
+          <article>
+            <a href="http://perfectionkills.com/javascript-quiz/">
+              JavaScript Quiz
+            </a>
+          </article>
+          <article>
+            <a href="http://perfectionkills.com/javascript-quiz-es6/">
+              JavaScript Quiz. ES6 edition.
+            </a>
+          </article>
+          <article>
+            <a href="https://github.com/getify/You-Dont-Know-JS">
+              You Don’t Know JS
+            </a>
+          </article>
+          <article>
+            <a href="http://youmightnotneedjquery.com/">
+              You might not need jQuery
+              <ul>
+                <li>
+                  Nice collection of frequent operations; useful even for those
+                  who don't use jQuery (like myself)
+                </li>
+              </ul>
+            </a>
+          </article>
+        </section>
+
+        <section>
+          <h4>Reference</h4>
+          <article>
+            <a href="https://developer.mozilla.org">
+              Mozilla Developer Network
+            </a>
+            <ul>
+              <li>
+                Very comprehensive reference HTML, CSS, JavaScript, and more, filled with examples
+              </li>
+            </ul>
+          </article>
+        </section>
+      </div>
 
       <h2>Library, Framework, and API</h2>
       <section>

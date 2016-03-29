@@ -1,13 +1,13 @@
 (function(window, document) {
   'use strict'
-
-  const docDom = document.querySelector('.toc')
-  const heading2s = document.querySelectorAll('h2')
-
-  let headingContent = ''
-  for (let heading of Array.from(heading2s)) {
-    heading.id = heading.textContent
-    headingContent += `<a href="#${heading.textContent}" class="toc-item">${heading.innerText}</a><br/>`
+  const headings = document.querySelectorAll('h2, h3, h4')
+  for (let heading of [].slice.apply(headings)) {
+    heading.addEventListener('click', (event) => {
+      let sibiling = heading.nextElementSibling
+      while (sibiling) {
+        sibiling.classList.toggle('display')
+        sibiling = sibiling.nextElementSibling
+      }
+    })
   }
-  docDom.innerHTML = headingContent
-})(window, document)
+})(window, window.document)
