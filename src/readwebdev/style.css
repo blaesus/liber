@@ -71,3 +71,14 @@ h4:active, .active h4 {
 ul {
     margin: 0.3em 0
 }
+
+li {
+    position: relative;
+    margin-left: 1em;
+}
+
+li:before {
+    content: '-';
+    position: absolute;
+    left: -1em;
+}
