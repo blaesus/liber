@@ -8,6 +8,7 @@ const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const inlinesource = require('gulp-inline-source')
 const include = require("gulp-include")
+const htmlmin = require('gulp-htmlmin')
 
 gulp.task('copy', () => {
   rimraf.sync('./build/')
@@ -58,12 +59,19 @@ gulp.task('inline-source-into-html', ['build', 'insert-html-partials', 'import-c
     .pipe(gulp.dest('./build'))
 })
 
+gulp.task('minify-html', ['inline-source-into-html'], () => {
+  return gulp.src('./build/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./build'))
+})
+
 gulp.task('make',
   [
     'build',
     'optimize-css',
     'optimize-js',
     'inline-source-into-html',
+    'minify-html',
   ],
   () => {
   }
