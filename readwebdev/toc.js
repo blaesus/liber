@@ -1,16 +1,1 @@
-(function(window, document) {
-  'use strict'
-
-  function activate(event) {
-    if (event.target.nodeName.toLowerCase() === 'h4') {
-      let sibiling = event.target.nextElementSibling
-      event.target.parentNode.classList.toggle('active')
-      while (sibiling) {
-        sibiling.classList.toggle('display')
-        sibiling = sibiling.nextElementSibling
-      }
-    }
-  }
-  document.body.addEventListener('click', activate)
-
-})(window, window.document)
+"use strict";!function(t,e){function n(t){if("h4"===t.target.nodeName.toLowerCase()){var e=t.target.nextElementSibling;for(t.target.parentNode.classList.toggle("active");e;)e.classList.toggle("display"),e=e.nextElementSibling}}e.body.addEventListener("click",n)}(window,window.document);
