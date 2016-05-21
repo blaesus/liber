@@ -13,7 +13,7 @@ const watch = require('gulp-watch')
 
 
 gulp.task('copy', () => {
-  rimraf.sync('./build/')
+  rimraf.sync('./build/**/*')
   return gulp.src(['./src/**/*'])
     .pipe(gulp.dest('./build/'))
 })
