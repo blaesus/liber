@@ -9,6 +9,8 @@ const uglify = require('gulp-uglify')
 const inlinesource = require('gulp-inline-source')
 const include = require("gulp-include")
 const htmlmin = require('gulp-htmlmin')
+const watch = require('gulp-watch')
+
 
 gulp.task('copy', () => {
   rimraf.sync('./build/')
@@ -80,4 +82,8 @@ gulp.task('make',
 gulp.task('deploy', ['make'], () => {
   return gulp.src('./build/**/*')
     .pipe(ghPages())
+})
+
+gulp.task('watch', () => {
+  gulp.watch('./src/**/*', ['build'])
 })
