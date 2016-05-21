@@ -24,15 +24,15 @@ section {
 
 article {
     display: none;
+}
+
+.active article {
+    display: block;
     margin: 0 0 1em 0.5em;
 }
 
 article:last-child {
     margin-bottom: 0.5em;
-}
-
-.display {
-    display: block;
 }
 
 .active {
