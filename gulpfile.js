@@ -19,7 +19,7 @@ gulp.task('copy', () => {
 })
 
 gulp.task('insert-html-partials', ['copy'], () => {
-  gulp.src('./build/**/*.html')
+ return gulp.src('./build/**/*.html')
     .pipe(include({
       extensions: 'html',
     }))
@@ -56,7 +56,7 @@ gulp.task('optimize-js', ['copy'], () => {
 })
 
 gulp.task('inline-source-into-html', ['build', 'insert-html-partials', 'import-css', 'optimize-css', 'optimize-js'], () => {
-  return gulp.src('./build/**/*.html')
+  return gulp.src(['./build/**/*.html', '!**/partials/*'])
     .pipe(inlinesource())
     .pipe(gulp.dest('./build'))
 })
