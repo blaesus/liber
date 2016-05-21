@@ -40,14 +40,13 @@ article:last-child {
     transition: padding 0.2s ease-out;
 }
 
-h2 {
+h2, h3 {
     cursor: default;
 }
 
 h4 {
     cursor: pointer;
 }
-
 
 @media screen and (min-width: 480px) {
     h4:hover {
