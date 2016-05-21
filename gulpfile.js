@@ -6,7 +6,8 @@ const cssmin = require('gulp-cssmin')
 const autoprefixer = require('gulp-autoprefixer')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
-const inlinesource = require('gulp-inline-source');
+const inlinesource = require('gulp-inline-source')
+const include = require("gulp-include")
 
 gulp.task('copy', () => {
   rimraf.sync('./build/')
@@ -14,14 +15,22 @@ gulp.task('copy', () => {
     .pipe(gulp.dest('./build/'))
 })
 
+gulp.task('insert-html-partials', ['copy'], () => {
+  gulp.src('./build/**/*.html')
+    .pipe(include({
+      extensions: 'html',
+    }))
+    .pipe(gulp.dest('./build'))
+})
+
+gulp.task('build', ['copy', 'insert-html-partials'], () => {
+})
+
 gulp.task('import-css', ['copy'], () => {
   const options = {};
   return gulp.src("./build/shared/common.css")
     .pipe(cssimport(options))
     .pipe(gulp.dest("./build/shared"))
-})
-
-gulp.task('build', ['copy', 'import-css'], () => {
 })
 
 gulp.task('optimize-css', ['import-css'], () => {
@@ -37,13 +46,13 @@ gulp.task('optimize-js', ['copy'], () => {
   return gulp.src('./build/**/*.js')
     .pipe(babel({
       presets: ['es2015'],
-      plugins: ["transform-object-assign"]
+      plugins: ['transform-object-assign'],
     }))
     .pipe(uglify())
     .pipe(gulp.dest('./build'))
 })
 
-gulp.task('inline-source-into-html', ['build', 'optimize-css', 'optimize-js'], () => {
+gulp.task('inline-source-into-html', ['build', 'insert-html-partials', 'import-css', 'optimize-css', 'optimize-js'], () => {
   return gulp.src('./build/**/*.html')
     .pipe(inlinesource())
     .pipe(gulp.dest('./build'))
