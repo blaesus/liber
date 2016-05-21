@@ -1,6 +1,4 @@
 (function(window, document) {
-  'use strict'
-
   function activate(event) {
     if (event.target.nodeName.toLowerCase() === 'h4') {
       let sibiling = event.target.nextElementSibling
@@ -12,5 +10,5 @@
     }
   }
   document.body.addEventListener('click', activate)
-
+  
 })(window, window.document)
