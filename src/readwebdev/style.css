@@ -89,3 +89,7 @@ li:before {
     position: absolute;
     left: -1em;
 }
+
+footer {
+    margin-top: 3em;
+}
