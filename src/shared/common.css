@@ -1,11 +1,17 @@
 @import url('./normalize-4.1.1.css');
 
 body {
-    padding: 1em;
+    padding: 0.5em;
     font: 16px "Lucida Grande", "Helvetica", sans-serif;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 720px;
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        padding: 1em;
+    }
 }
 
 a {
