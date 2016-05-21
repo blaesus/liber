@@ -45,23 +45,30 @@ h2, h3 {
 }
 
 h4 {
+    padding-left: 0;
     cursor: pointer;
+    background: white;
+    transition: padding-left 0.5s, background 0.1s;
 }
 
 @media screen and (min-width: 480px) {
     h4:hover {
         background: #ddd;
     }
+
+    a {
+        transition: color 0.1s, border-bottom-color 0.1s;
+    }
+
+    a[href]:hover {
+        color: #777;
+        border-bottom-color: #777;
+    }
 }
 
 .active h4 {
     margin-bottom: 0.5em;
     background: #ddd;
-}
-
-h4 {
-    padding-left: 0;
-    transition: padding-left 0.5s;
 }
 
 h4:active, .active h4 {
