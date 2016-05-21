@@ -10,5 +10,9 @@
     }
   }
   document.body.addEventListener('click', activate)
-  
+
+  // Everything should open in new tab
+  const anchors = [].slice.apply(document.querySelectorAll('main a[href]'))
+  anchors.forEach(node => node.target = '_blank')
+
 })(window, window.document)
