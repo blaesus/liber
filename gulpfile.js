@@ -78,7 +78,6 @@ gulp.task('make',
 )
 
 gulp.task('deploy', ['make'], () => {
-  rimraf.sync('./build/partials')
   return gulp.src('./build/**/*')
     .pipe(ghPages())
 })
