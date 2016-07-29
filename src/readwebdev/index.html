@@ -11,7 +11,11 @@
       <div>
         <h2>Preamble</h2>
         <p>
-          Books and articles on Web development (leaning toward frontend) that I read in totality or part.
+          Books and articles on Web development (leaning toward frontend) that
+          I find useful.
+        </p>
+        <p>
+          They're sorted roughly in order of my own learning.
         </p>
       </div>
 
@@ -21,6 +25,21 @@
           <h3>HTML and CSS</h3>
           <section>
             <h4>Beginner</h4>
+            <article>
+              <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">
+                World Wide Web (CERN)
+              </a>
+              <ul>
+                <li>
+                  The first website in history. Learn about the original vision.
+                </li>
+                <li>
+                  Also, take a look at how HTML was written (and how they're
+                  rendered by modern browsers).
+                </li>
+              </ul>
+            </article>
+
             <article>
               <a href="https://en.wikipedia.org/wiki/HTML">HTML - Wikipedia</a>
               <ul>
@@ -53,7 +72,8 @@
               <a href="http://html5doctor.com/element-index/">Index of HTML5 Element</a>
               <ul>
                 <li>
-                  Quick reference of all HTML5 elements. It’s like the Specification, but better formatted and easier to read.
+                  Quick reference of all HTML5 elements. It’s like the
+                  Specification, but better formatted and easier to read.
                 </li>
                 <li>
                   Read through to check for unknown unknowns.
@@ -80,6 +100,31 @@
                 </li>
               </ul>
             </article>
+
+            <article>
+              <a href="https://eager.io/blog/the-languages-which-almost-were-css/">
+                The Languages Which Almost Became CSS
+              </a>
+              <ul>
+                <li>
+                  History of CSS (and its competitors)
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <a href="https://drafts.csswg.org/selectors-4/">
+                CSS Selector Level 4 (draft)
+              </a>
+              <ul>
+                <li>
+                  Very worthwhile to master CSS selectors
+                </li>
+                <li>
+                  Level 4 is much clearer than level 3
+                </li>
+              </ul>
+            </article>
           </section>
 
           <section>
@@ -91,26 +136,8 @@
             </article>
 
             <article>
-              <a href="http://www.w3.org/TR/html5/">
-                The HTML5.0 Standard (W3C)
-              </a>
-            </article>
-
-            <article>
-              <a href="http://www.w3.org/TR/CSS2/">
-                The CSS Specification 2.1
-              </a>
-            </article>
-
-            <article>
               <a href="http://www.w3.org/Style/CSS/specs.en.html">
                 The Current CSS Specifications
-              </a>
-            </article>
-
-            <article>
-              <a href="https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html">
-                The XMLHttpRequest Specification
               </a>
             </article>
           </section>
@@ -129,7 +156,7 @@
                   Moderately useful
                 </li>
                 <li>
-                  Maintenance ended in early 2011, which is an ancient era for Web
+                  Maintenance ended in early 2011, which is ancient in Web world
                 </li>
               </ul>
             </article>
@@ -143,6 +170,11 @@
             <a href="https://en.wikipedia.org/wiki/JavaScript">
               JavaScript - Wikipedia
             </a>
+            <ul>
+              <li>
+                Grand overview of the language
+              </li>
+            </ul>
           </article>
 
           <article>
@@ -168,7 +200,8 @@
                 Nice little book about the key features of JavaScript.
               </li>
               <li>
-                Very opinionated, but seems reasonable.
+                Very opinionated, and some practices have become obsolete
+                in modern development.
               </li>
             </ul>
           </article>
@@ -182,7 +215,7 @@
                 Comprehensive and detailed introduction to JavaScript the language and DOM and relevant technologies
               </li>
               <li>
-                Update in 2011, recent enough
+                Update in 2011, quite old
               </li>
             </ul>
           </article>
@@ -202,34 +235,42 @@
         <section>
           <h4>Advanced</h4>
           <article>
-            <a href="http://www.ecma-international.org/ecma-262/6.0/">
-              ECMAScript 2015 Language Specification
+            <a href="http://www.ecma-international.org/ecma-262/5.1/Ecma-262.pdf">
+              ECMAScript 5.1 Language Specification
             </a>
+            <ul>
+              <li>
+                This is an old version, but it's also thinner to read.
+              </li>
+            </ul>
           </article>
 
           <article>
-            <a href="http://www.w3.org/DOM/DOMTR">
-              DOM Specifications
+            <a href="https://github.com/tc39/proposals">
+              TC39 Proposals
             </a>
+            <ul>
+              <li>
+                Keep an eye on new ES features
+              </li>
+              <li>
+                Also pay attention to the proposal process
+              </li>
+            </ul>
           </article>
         </section>
 
         <section>
           <h4>Supplementary</h4>
           <article>
-            <a href="http://perfectionkills.com/javascript-quiz/">
-              JavaScript Quiz
-            </a>
-          </article>
-          <article>
-            <a href="http://perfectionkills.com/javascript-quiz-es6/">
-              JavaScript Quiz. ES6 edition.
-            </a>
-          </article>
-          <article>
             <a href="https://github.com/getify/You-Dont-Know-JS">
               You Don’t Know JS
             </a>
+            <ul>
+              <li>
+                The title might be too strong, but the books are helpful.
+              </li>
+            </ul>
           </article>
           <article>
             <a href="http://youmightnotneedjquery.com/">
@@ -245,14 +286,25 @@
         </section>
 
         <section>
-          <h4>Reference</h4>
+          <h4>Reference (for HTML & CSS & JS)</h4>
           <article>
             <a href="https://developer.mozilla.org">
               Mozilla Developer Network
             </a>
             <ul>
               <li>
-                Very comprehensive reference HTML, CSS, JavaScript, and more, filled with examples
+                Very comprehensive reference for HTML, CSS, JavaScript, and more,
+                with examples
+              </li>
+            </ul>
+          </article>
+          <article>
+            <a href="http://caniuse.com/">
+              Can I Use
+            </a>
+            <ul>
+              <li>
+                Quickly check browser compatibility of a feature
               </li>
             </ul>
           </article>
