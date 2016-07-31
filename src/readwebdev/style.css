@@ -2,13 +2,6 @@ body {
     max-width: 480px;
 }
 
-noscript {
-    display: block;
-    background: black;
-    color: white;
-    padding: 0.5em;
-}
-
 h3:before {
     content: "{ ";
 }
