@@ -19,6 +19,12 @@ section {
     padding-bottom: 0.1em;
 }
 
+section.active {
+    background: #eee;
+    transition: padding 0.2s ease-out;
+}
+
+
 h4 {
     margin: 0;
     margin-bottom: 0.2em;
@@ -46,11 +52,6 @@ article {
 
 article:last-child {
     margin-bottom: 0.5em;
-}
-
-.active {
-    background: #eee;
-    transition: padding 0.2s ease-out;
 }
 
 @media screen and (min-width: 480px) {
