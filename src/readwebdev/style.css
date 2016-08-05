@@ -10,18 +10,30 @@ h3:after {
     content: " }";
 }
 
-h4 {
-    margin: 0;
-    margin-bottom: 0.2em;
-    -webkit-tap-highlight-color: transparent;
+h2, h3 {
+    cursor: default;
 }
-
 
 section {
     margin-bottom: 1em;
     padding-bottom: 0.1em;
 }
 
+h4 {
+    margin: 0;
+    margin-bottom: 0.2em;
+    padding-left: 0;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    background: white;
+    transition: padding-left 0.5s, background 0.3s ease-out;
+}
+
+@media screen and (min-width: 480px) {
+    h4:hover {
+        background: #ddd;
+    }
+}
 
 article {
     display: none;
@@ -41,22 +53,7 @@ article:last-child {
     transition: padding 0.2s ease-out;
 }
 
-h2, h3 {
-    cursor: default;
-}
-
-h4 {
-    padding-left: 0;
-    cursor: pointer;
-    background: white;
-    transition: padding-left 0.5s, background 0.1s;
-}
-
 @media screen and (min-width: 480px) {
-    h4:hover {
-        background: #ddd;
-    }
-
     a {
         transition: color 0.1s, border-bottom-color 0.1s;
     }
