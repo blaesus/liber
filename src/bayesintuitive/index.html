@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+  <head>
+    <!--=include ../shared/partials/head.html -->
+  </head>
+  <body>
+  <h1 class="post-title">
+    A More Intuitive Bayes' Rule
+  </h1>
+  <article class="post-content">
+    <p>This article assumes basic familiarity with of
+      <a href="http://www.wikiwand.com/en/Bayes'_theorem">Bayes’ rule</a>,
+      and proposes another form of it which is possibly more memorable.
+    </p>
+
+    <p>
+      I’ve known the Bayes’ theorem for a couple of years. I understand its
+      importance and use, but simply couldn’t “see” it ——
+      I have to derive it from P(A&amp;B)=P(B&amp;A) every time, making
+      huge mental efforts not to confuse “A” and “B”.
+    </p>
+
+    <p>
+      I’ve struggled for so long and tried many help:
+      <a href="http://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/">An Intuitive Explanation</a>,
+      <a href="http://yudkowsky.net/rational/bayes">Another Intuitive Explanation</a>,
+      <a href="http://lesswrong.com/lw/2b0/bayes_theorem_illustrated_my_way/">Illustrated Explanation</a>, etc.
+      Every time, I’ll “get it”for a while. Then I’ll lose it.
+    </p>
+
+    <p>
+      This inconvenience was finally solved, as I came upon a more revealing
+      form the the formula, which makes intuitive sense to me. It may not work
+      for you, but if you’re confused in similar ways as I did, you might find
+      this useful.
+    </p>
+
+    <h2 id="the-usual-form">The usual form</h2>
+
+    <p>We usually see Bayes’ rule in the following form:</p>
+    <p>
+      <img src="./assets/Bayes_Usual.png" alt=""/>
+    </p>
+
+    <p>
+      People praised its beauty; I find it confusing.
+      Luckily we don’t have to stick with this.
+    </p>
+
+    <h2 id="the-alternative">The alternative</h2>
+
+    <p>Allow me introduce an alternative form of the Bayes’ Rule:</p>
+    <p><img src="./assets/Bayes_Proposed.png" alt=""/></p>
+
+    <p>Eh? What the hell? More terms? More conditional probabilities? Are you kidding me?</p>
+
+    <p>Well, this is simpler to remember than it looks…</p>
+
+    <h2 id="here-is-how-to-see-it">Here is how to “see it”</h2>
+
+    <p>
+      <strong>Doing science is like raising animals.</strong>
+      You keep many types of animals, just as you have many hypotheses.
+      You feed food to the animals, just as you apply evidences to hypotheses.
+      Some food works well on some animals, less so on others, just as some
+      evidences enhance the probabilities of some hypotheses, but decrease the
+      probabilities of others. The most populous species correspond to the most
+      likely hypothesis; and the population ratios between the animal species
+      is the ratio of probability between the hypotheses.
+    </p>
+
+    <p>
+      Let’s say, at first, you have <strong>30</strong> <em>dogs</em> and
+      <strong>10</strong> <em>cows</em> (i.e. You have two hypotheses,
+      the first is 3 times as likely as the second).
+    </p>
+
+    <p>After you had fed them some magic food (=after you apply a piece of
+      evidence), the <em>dogs</em> reproduced to <strong>10</strong> times
+      as many, and <em>cows</em> grew to <strong>2</strong> times as many
+      (=the diagnostic ratio is <strong>10:2</strong> in favour of the
+      first hypothesis).
+    </p>
+
+    <p>
+      Now, after reproduction induced by the food, how many dogs and cows do
+      you have (what’s the posterior ratio)? Well that’s easy: 30×10=300,
+      10×2=20. Therefore, you now have <strong>300</strong> <em>dogs</em> and
+      <strong>20</strong> <em>cows</em> (=in light of the new evidence,
+      the first hypothesis is now 15 times as likely as the second).
+    </p>
+
+    <p>If <em>dogs</em> and <em>cows</em> are all animals you have
+      (=you have numerated all possible hypotheses), you can get the exact
+      probability of P(H1)=300/(300+20)=0.94 and P(H2)=20/(300+20)=0.06.
+    </p>
+
+    <h2 id="now-back-to-the-formula">Now, back to the formula</h2>
+
+    <p>
+      <img src="./assets/Bayes_Proposed_annotated.png" alt=""/>
+    </p>
+
+    <p>This form has a few advantages:</p>
+
+    <p><strong>First</strong>, naming carries meaning, as
+      <strong>E</strong> stands for <strong>E</strong>vidence,
+      and <strong>H</strong> stands for <strong>H</strong>ypothesis;</p>
+
+    <p>
+      <strong>Second</strong>, the order follows thinking: firstly prior,
+      then diagnostic odd(s), lastly posterior.
+    </p>
+
+    <p>
+      <strong>Third</strong>, it has more intuitive extensions ——
+    </p>
+
+    <ul>
+      <li>
+        <p>More (independent) evidences? Easy:</p>
+        <p><img src="./assets/Bayes_Proposed_Multiple_Evidences.png" alt=""/></p>
+      </li>
+
+      <li>
+        <p>More hypotheses? No problem:</p>
+        <p><img src="./assets/Bayes_Proposed_Three_Hypotheses.png" alt=""/> <br/> (These should be ratios, not “fractions”, but you get the idea.)</p>
+      </li>
+    </ul>
+
+    <p>
+      <strong>Fourth</strong>, if you want an numerical value probability of a
+      hypothesis, you have to take an explicit step to normalise. To normalise
+      is to assume that you’ve found all possible hypotheses. In many cases,
+      you may be reluctant to make such assumption. This “ratio form” of Bayes’
+      rule doesn’t require normalisation. You can say Hypothesis 1 is twice
+      as likely as Hypothesis 2, and carry out all calibration in accordance
+      with evidences, without saying exactly how likely are these hypotheses.
+    </p>
+
+    <p>
+      <strong>Fifth</strong>, you can avoid decimals, which are nasty for
+      mental calculation. The prior is a ratio of two integers. The diagnostic
+      ratio is also a ratio of two integers (in percent). The posterior,
+      therefore, is the ratio of the products of two pairs of integers. <a href="#note1">Note</a>
+    </p>
+
+    <p>In other words, the rule can also be written as:</p>
+
+    <p>
+      <img src="./assets/Bayes_Proposed_2.png" alt=""/>
+    </p>
+
+    <p>(Notice the position of the multiplication sign and fraction line.)</p>
+
+    <p>If you worry about misreading P(H1) as the posterior probability
+      (it’s the prior), you could try this wording, with I meaning “background <strong>I</strong>nformation”:
+    </p>
+    <p>
+      <img src="./assets/Bayes_Proposed_all_I.png" alt=""/>
+    </p>
+
+    <p>
+      Or, if you are willing to trade some mathematical accuracy for simplicity, this may work better for you:
+    </p>
+
+    <p>
+      <img src="./assets/Bayes_Proposed_prior_I.png" alt=""/>
+    </p>
+
+    <p>
+      (Though if you write an explicit <strong>I</strong> standing for
+      background information, you’re supposed to state it everywhere.
+    </p>
+
+    <p>
+      <strong>[Note]</strong> In mathematical sense,
+      P(E|H1)=<strong>0.10</strong> and P(E|H2)=<strong>0.02</strong>,
+      which are decimals, but it’s not hard to imagine them as
+      <strong>10%</strong> and <strong>2%</strong>, and subsequently as =
+      integers of <strong>10</strong> (in 100) and <strong>2</strong> (in 100).
+      With this mental technique, you can stick with integers for all terms in
+      the formula.
+    </p>
+
+    <p>
+      “Integerisation” has another advantage: numbers keep growing.
+      On the contrary, if you see P(E|H1) and P(E|H2) as decimals, the terms
+      keep going small. I find it easier to picture numbers growing from
+      hundreds to thousands, than shrinking from hundredth to thousandth,
+      perhaps because we’re usually interested in events of the highest
+      probabilities.
+    </p>
+  </article>
+
+  <!--=include ../shared/partials/footer.html -->
+  <!--=include ../shared/partials/ga.html -->
+  </body>
+</html>
