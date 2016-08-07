@@ -43,11 +43,11 @@ h4 {
 
 article {
     display: none;
+    margin: 0 0 1em 0.5em;
 }
 
 .active article {
     display: block;
-    margin: 0 0 1em 0.5em;
 }
 
 article:last-child {
