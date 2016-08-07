@@ -7,6 +7,29 @@
         display: block;
       }
 
+      .note {
+        color: #333;
+        font-size: 0.9em;
+      }
+
+      @keyframes highlight {
+        0% {
+          background: transparent;
+        }
+
+        30% {
+          background: yellow;
+        }
+
+        100% {
+          background: transparent;
+        }
+      }
+
+      #note1:target {
+        animation: highlight 1.5s ease-out;
+      }
+
       @media screen and (max-width: 500px) {
         .formula {
           width: 100%;
@@ -144,7 +167,9 @@
         <p>More hypotheses? No problem:</p>
         <p>
           <img class="formula "src="./assets/Bayes_Proposed_Three_Hypotheses.png" alt=""/>
-          (These should be ratios, not “fractions”, but you get the idea.)
+          <div class="note">
+            (These should be ratios, not “fractions”, but you get the idea.)
+          </div>
         </p>
       </li>
     </ul>
@@ -163,7 +188,8 @@
       <strong>Fifth</strong>, you can avoid decimals, which are nasty for
       mental calculation. The prior is a ratio of two integers. The diagnostic
       ratio is also a ratio of two integers (in percent). The posterior,
-      therefore, is the ratio of the products of two pairs of integers. <a href="#note1">Note</a>
+      therefore, is the ratio of the products of two pairs of integers.
+      <a href="#note1">Note</a>
     </p>
 
     <p>In other words, the rule can also be written as:</p>
@@ -188,7 +214,7 @@
       background information, you’re supposed to state it everywhere.
     </p>
 
-    <p>
+    <p id="note1">
       <strong>[Note]</strong> In mathematical sense,
       P(E|H1)=<strong>0.10</strong> and P(E|H2)=<strong>0.02</strong>,
       which are decimals, but it’s not hard to imagine them as
