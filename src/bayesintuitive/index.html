@@ -6,6 +6,20 @@
       .formula {
         display: block;
       }
+
+      @media screen and (max-width: 500px) {
+        .formula {
+          width: 100%;
+        }
+
+        .free-width-container {
+          overflow-x: scroll;
+        }
+
+        .free-width {
+          width: auto;
+        }
+      }
     </style>
   </head>
   <body>
@@ -120,7 +134,10 @@
     <ul>
       <li>
         <p>More (independent) evidences? Easy:</p>
-        <img class="formula" src="./assets/Bayes_Proposed_Multiple_Evidences.png" alt=""/>
+        <div class="free-width-container">
+          <img class="formula free-width"
+               src="./assets/Bayes_Proposed_Multiple_Evidences.png" alt="" />
+        </div>
       </li>
 
       <li>
