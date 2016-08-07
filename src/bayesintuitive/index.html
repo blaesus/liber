@@ -2,6 +2,11 @@
 <html>
   <head>
     <!--=include ../shared/partials/head.html -->
+    <style>
+      .formula {
+        display: block;
+      }
+    </style>
   </head>
   <body>
   <h1 class="post-title">
@@ -38,9 +43,7 @@
     <h2 id="the-usual-form">The usual form</h2>
 
     <p>We usually see Bayes’ rule in the following form:</p>
-    <p>
-      <img src="./assets/Bayes_Usual.png" alt=""/>
-    </p>
+    <img class="formula" src="./assets/Bayes_Usual.png" alt=""/>
 
     <p>
       People praised its beauty; I find it confusing.
@@ -50,7 +53,7 @@
     <h2 id="the-alternative">The alternative</h2>
 
     <p>Allow me introduce an alternative form of the Bayes’ Rule:</p>
-    <p><img src="./assets/Bayes_Proposed.png" alt=""/></p>
+    <img class="formula"src="./assets/Bayes_Proposed.png" alt=""/>
 
     <p>Eh? What the hell? More terms? More conditional probabilities? Are you kidding me?</p>
 
@@ -97,9 +100,7 @@
 
     <h2 id="now-back-to-the-formula">Now, back to the formula</h2>
 
-    <p>
-      <img src="./assets/Bayes_Proposed_annotated.png" alt=""/>
-    </p>
+    <img class="formula"src="./assets/Bayes_Proposed_annotated.png" alt=""/>
 
     <p>This form has a few advantages:</p>
 
@@ -119,12 +120,15 @@
     <ul>
       <li>
         <p>More (independent) evidences? Easy:</p>
-        <p><img src="./assets/Bayes_Proposed_Multiple_Evidences.png" alt=""/></p>
+        <img class="formula" src="./assets/Bayes_Proposed_Multiple_Evidences.png" alt=""/>
       </li>
 
       <li>
         <p>More hypotheses? No problem:</p>
-        <p><img src="./assets/Bayes_Proposed_Three_Hypotheses.png" alt=""/> <br/> (These should be ratios, not “fractions”, but you get the idea.)</p>
+        <p>
+          <img class="formula "src="./assets/Bayes_Proposed_Three_Hypotheses.png" alt=""/>
+          (These should be ratios, not “fractions”, but you get the idea.)
+        </p>
       </li>
     </ul>
 
@@ -147,26 +151,20 @@
 
     <p>In other words, the rule can also be written as:</p>
 
-    <p>
-      <img src="./assets/Bayes_Proposed_2.png" alt=""/>
-    </p>
+    <img class="formula "src="./assets/Bayes_Proposed_2.png" alt=""/>
 
     <p>(Notice the position of the multiplication sign and fraction line.)</p>
 
     <p>If you worry about misreading P(H1) as the posterior probability
       (it’s the prior), you could try this wording, with I meaning “background <strong>I</strong>nformation”:
     </p>
-    <p>
-      <img src="./assets/Bayes_Proposed_all_I.png" alt=""/>
-    </p>
+    <img class="formula" src="./assets/Bayes_Proposed_all_I.png" alt=""/>
 
     <p>
       Or, if you are willing to trade some mathematical accuracy for simplicity, this may work better for you:
     </p>
 
-    <p>
-      <img src="./assets/Bayes_Proposed_prior_I.png" alt=""/>
-    </p>
+    <img class="formula" src="./assets/Bayes_Proposed_prior_I.png" alt=""/>
 
     <p>
       (Though if you write an explicit <strong>I</strong> standing for
