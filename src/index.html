@@ -26,6 +26,16 @@
       .talks time {
         font-size: 0.8em;
       }
+
+      .email-line {
+        font: 0.8em monospace;
+        margin-top: 1em;
+      }
+      .email {
+        display: inline-block;
+        font-weight: bolder;
+      }
+
     </style>
     <title>symbolīs</title>
   </head>
@@ -105,6 +115,18 @@
         <time>
           September 2015
         </time>
+        <div class="email-line">
+          contact me:
+          <div class="email">
+            andy at [this domain]
+          </div>
+          <script>
+             var s = 'andy'
+             s += '&#x40'
+             s += 'sym<span></span>bol.is'
+             document.querySelector('.email').innerHTML = s
+          </script>
+        </div>
       </li>
     </ul>
   </body>
