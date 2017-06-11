@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const ghPages = require('gulp-gh-pages')
 const rimraf = require('rimraf')
 const cssimport = require("gulp-cssimport")
 const cssmin = require('gulp-cssmin')
@@ -80,8 +79,6 @@ gulp.task('make',
 )
 
 gulp.task('deploy', ['make'], () => {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages())
 })
 
 gulp.task('watch', () => {
