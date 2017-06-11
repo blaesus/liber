@@ -19,11 +19,11 @@ gulp.task('copy', () => {
 })
 
 gulp.task('insert-html-partials', ['copy'], () => {
- return gulp.src('./.built/**/*.html')
+ return gulp.src('./.built/**/*.html', {base: "./"})
     .pipe(include({
       extensions: 'html',
     }))
-    .pipe(gulp.dest('./built'))
+    .pipe(gulp.dest('.'))
 })
 
 gulp.task('build', ['copy', 'insert-html-partials'], () => {
