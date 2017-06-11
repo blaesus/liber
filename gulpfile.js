@@ -9,6 +9,7 @@ const inlinesource = require('gulp-inline-source')
 const include = require("gulp-include")
 const htmlmin = require('gulp-htmlmin')
 const watch = require('gulp-watch')
+const webserver = require('gulp-webserver')
 
 
 gulp.task('copy', () => {
@@ -81,6 +82,12 @@ gulp.task('make',
 gulp.task('deploy', ['make'], () => {
 })
 
-gulp.task('watch', () => {
+gulp.task('dev', () => {
+  gulp.src('./.built')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: true,
+    }))
   gulp.watch('./src/**/*', ['build'])
 })
