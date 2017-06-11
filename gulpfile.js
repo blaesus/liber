@@ -12,17 +12,17 @@ const watch = require('gulp-watch')
 
 
 gulp.task('copy', () => {
-  rimraf.sync('./build/**/*')
+  rimraf.sync('./.built/**/*')
   return gulp.src(['./src/**/*'])
-    .pipe(gulp.dest('./build/'))
+    .pipe(gulp.dest('./.built/'))
 })
 
 gulp.task('insert-html-partials', ['copy'], () => {
- return gulp.src('./build/**/*.html')
+ return gulp.src('./.built/**/*.html')
     .pipe(include({
       extensions: 'html',
     }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./built'))
 })
 
 gulp.task('build', ['copy', 'insert-html-partials'], () => {
@@ -30,40 +30,40 @@ gulp.task('build', ['copy', 'insert-html-partials'], () => {
 
 gulp.task('import-css', ['copy'], () => {
   const options = {};
-  return gulp.src("./build/shared/common.css")
+  return gulp.src("./.built/shared/common.css")
     .pipe(cssimport(options))
-    .pipe(gulp.dest("./build/shared"))
+    .pipe(gulp.dest("./.built/shared"))
 })
 
 gulp.task('optimize-css', ['import-css'], () => {
-  return gulp.src('./build/**/*.css')
+  return gulp.src('./.built/**/*.css')
     .pipe(cssmin())
     .pipe(autoprefixer({
       browsers: ['ie >= 8', 'last 3 versions'],
     }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./built'))
 })
 
 gulp.task('optimize-js', ['copy'], () => {
-  return gulp.src('./build/**/*.js')
+  return gulp.src('./.built/**/*.js')
     .pipe(babel({
       presets: ['es2015'],
       plugins: ['transform-object-assign'],
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./built'))
 })
 
 gulp.task('inline-source-into-html', ['build', 'insert-html-partials', 'import-css', 'optimize-css', 'optimize-js'], () => {
-  return gulp.src(['./build/**/*.html', '!**/partials/*'])
+  return gulp.src(['./.built/**/*.html', '!**/partials/*'])
     .pipe(inlinesource())
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./built'))
 })
 
 gulp.task('minify-html', ['inline-source-into-html'], () => {
-  return gulp.src('./build/**/*.html')
+  return gulp.src('./.built/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./built'))
 })
 
 gulp.task('make',
