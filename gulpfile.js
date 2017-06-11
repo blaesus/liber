@@ -11,6 +11,7 @@ const htmlmin = require('gulp-htmlmin')
 const watch = require('gulp-watch')
 const webserver = require('gulp-webserver')
 const shell = require('gulp-shell')
+var gulpIgnore = require('gulp-ignore')
 
 
 gulp.task('copy', () => {
@@ -48,6 +49,8 @@ gulp.task('optimize-css', ['import-css'], () => {
 
 gulp.task('optimize-js', ['copy'], () => {
   return gulp.src('./.built/**/*.js')
+    .pipe(gulp.dest('./.built'))
+    .pipe(gulpIgnore.exclude('**/*-server.js'))
     .pipe(babel({
       presets: ['es2015', 'es2016', 'es2017'],
       plugins: ['transform-object-assign'],

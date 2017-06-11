@@ -28,5 +28,9 @@
     "gulp-webserver": "^0.9.1",
     "rimraf": "^2.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-ignore": "^2.0.2",
+    "koa": "^2.2.0",
+    "node-fetch": "^1.7.1"
+  }
 }
