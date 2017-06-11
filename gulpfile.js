@@ -10,6 +10,7 @@ const include = require("gulp-include")
 const htmlmin = require('gulp-htmlmin')
 const watch = require('gulp-watch')
 const webserver = require('gulp-webserver')
+const shell = require('gulp-shell')
 
 
 gulp.task('copy', () => {
@@ -42,29 +43,31 @@ gulp.task('optimize-css', ['import-css'], () => {
     .pipe(autoprefixer({
       browsers: ['ie >= 8', 'last 3 versions'],
     }))
-    .pipe(gulp.dest('./built'))
+    .pipe(gulp.dest('./.built'))
 })
 
 gulp.task('optimize-js', ['copy'], () => {
   return gulp.src('./.built/**/*.js')
     .pipe(babel({
-      presets: ['es2015'],
+      presets: ['es2015', 'es2016', 'es2017'],
       plugins: ['transform-object-assign'],
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('./built'))
+    .pipe(gulp.dest('./.built'))
 })
 
-gulp.task('inline-source-into-html', ['build', 'insert-html-partials', 'import-css', 'optimize-css', 'optimize-js'], () => {
-  return gulp.src(['./.built/**/*.html', '!**/partials/*'])
+gulp.task('inline-source-into-html', ['build', 'import-css', 'optimize-css', 'optimize-js'], () => {
+  rimraf.sync('.built/template')
+  rimraf.sync('.built/shared/partials')
+  return gulp.src('./.built/**/*.html')
     .pipe(inlinesource())
-    .pipe(gulp.dest('./built'))
+    .pipe(gulp.dest('./.built'))
 })
 
 gulp.task('minify-html', ['inline-source-into-html'], () => {
   return gulp.src('./.built/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./built'))
+    .pipe(gulp.dest('./.built'))
 })
 
 gulp.task('make',
@@ -80,6 +83,7 @@ gulp.task('make',
 )
 
 gulp.task('deploy', ['make'], () => {
+  shell.task('rsync -azP .built/* ${HOME_SERVER}:/var/www/html')
 })
 
 gulp.task('dev', () => {
