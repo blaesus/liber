@@ -10,24 +10,36 @@ function quidquidIntegerNumerus(initium, finis) {
 function novamExercitiaFacere() {
     verbaDOM.value = ''
     indicium.innerHTML = ''
-    numerusDOM.innerHTML = quidquidIntegerNumerus(1, 1000)
+    numerusDOM.innerHTML = quidquidIntegerNumerus(10, 20)
+}
+
+function verbumAbNumero(numerus, data) {
+    if (numerus <= 10) {
+        return data['1'][numerus - 1]
+    }
+    else if (numerus <= 20) {
+        return data['10+'][numerus - 1 - 10]
+    }
+    else if (numerus % 10 === 0 && numerus < 100) {
+        return data['*10'][numerus / 10 - 1]
+    }
+    else if (numerus % 100 === 0 && numerus <= 1000) {
+        return data['*100'][numerus / 100 - 1]
+    }
 }
 
 function aequine(numerus, verba, configuratio) {
-    return false
+    return verbumAbNumero(numerus, exercitia.data) === verba
 }
 
 bullaVerumne.onclick = function() {
-    if (aequine(numerusDOM.innerHTML, verbaDOM.value)) {
+    var numerus = parseInt(numerusDOM.innerHTML, 10)
+    if (aequine(numerus, verbaDOM.value)) {
         indicium.innerHTML = 'Vērum!'
     }
     else {
         indicium.innerHTML = 'Nōn vērum est. Cōnāre iterum?'
     }
-}
-
-verbaDOM.oninput = function() {
-    console.info('hi')
 }
 
 novamExercitiaFacere()
