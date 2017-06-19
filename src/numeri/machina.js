@@ -1,7 +1,8 @@
-var verbaDOM = document.querySelector('.verba')
-var numerusDOM = document.querySelector('.numerus')
-var bullaVerumne = document.querySelector('.bulla.verumne')
-var indicium = document.querySelector('.indicium')
+const verbaDOM = document.querySelector('.verba')
+const numerusDOM = document.querySelector('.numerus')
+const bullaVerumne = document.querySelector('.bulla.verumne')
+const bullaNescio = document.querySelector('.bulla.nescio')
+const indicium = document.querySelector('.indicium')
 
 const KEY_ENTER = 13
 
@@ -74,6 +75,11 @@ verbaDOM.onkeypress = (event) => {
     if (event.charCode === KEY_ENTER) {
         verificare()
     }
+}
+
+bullaNescio.onclick = () => {
+    var numerus = parseInt(numerusDOM.innerHTML, 10)
+    indicium.innerHTML = `Vēro: ${verbumAbNumero(numerus, exercitia.data)}`
 }
 
 function novamExercitiaFacere() {
