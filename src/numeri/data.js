@@ -27,7 +27,7 @@ exercitia.data = {
     '*10': [
         'decem',
         'vīgintī',
-        'trīginta',
+        'trīgintā',
         'quadrāgintā',
         'quīnquāgintā',
         'sexāgintā',

@@ -2,9 +2,11 @@ const verbaDOM = document.querySelector('.verba')
 const numerusDOM = document.querySelector('.numerus')
 const bullaVerumne = document.querySelector('.bulla.verumne')
 const bullaNescio = document.querySelector('.bulla.nescio')
+const bullaNovumNumerum = document.querySelector('.bulla.novum-numerum')
 const indicium = document.querySelector('.indicium')
 
 const KEY_ENTER = 13
+const KEY_ESC = 27
 
 function quidquidIntegerNumerus(initium, finis) {
     return Math.floor(Math.random() * (finis - initium + 1)) + initium;
@@ -77,15 +79,27 @@ verbaDOM.onkeypress = (event) => {
     }
 }
 
-bullaNescio.onclick = () => {
+function nescio() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
     indicium.innerHTML = `Vēro: ${verbumAbNumero(numerus, exercitia.data)}`
+    bullaNovumNumerum.style.display = 'inline-block'
 }
 
-function novamExercitiaFacere() {
+bullaNescio.onclick = nescio
+document.body.onkeydown = (event) => {
+    console.info(event.keyCode)
+    if (event.keyCode === KEY_ESC) {
+        nescio()
+    }
+}
+
+function novumExercitiumFacere() {
     verbaDOM.value = ''
     indicium.innerHTML = ''
+    bullaNovumNumerum.style.display = 'none'
     numerusDOM.innerHTML = quidquidIntegerNumerus(1, 1000)
 }
 
-novamExercitiaFacere()
+bullaNovumNumerum.onclick = novumExercitiumFacere
+
+novumExercitiumFacere()
