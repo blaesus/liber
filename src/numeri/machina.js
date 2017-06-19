@@ -64,7 +64,7 @@ function aequine(numerus, verba, configuratio) {
 
 function verificare() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
-    if (aequine(numerus, verbaDOM.value)) {
+    if (aequine(numerus, verbaDOM.innerHTML)) {
         indicium.innerHTML = 'Vērum!'
     }
     else {
@@ -75,13 +75,14 @@ function verificare() {
 bullaVerumne.onclick = verificare
 verbaDOM.onkeypress = (event) => {
     if (event.charCode === KEY_ENTER) {
+        event.preventDefault()
         verificare()
     }
 }
 
 function nescio() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
-    indicium.innerHTML = `Vēro: ${verbumAbNumero(numerus, exercitia.data)}`
+    indicium.innerHTML = verbumAbNumero(numerus, exercitia.data)
     bullaNovumNumerum.style.display = 'inline-block'
 }
 
@@ -93,7 +94,7 @@ document.body.onkeydown = (event) => {
 }
 
 function novumExercitiumFacere() {
-    verbaDOM.value = ''
+    verbaDOM.innerHTML = ''
     indicium.innerHTML = ''
     bullaNovumNumerum.style.display = 'none'
     numerusDOM.innerHTML = quidquidIntegerNumerus(1, 1000)
@@ -102,3 +103,4 @@ function novumExercitiumFacere() {
 bullaNovumNumerum.onclick = novumExercitiumFacere
 
 novumExercitiumFacere()
+verbaDOM.focus()
