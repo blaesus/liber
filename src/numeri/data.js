@@ -11,8 +11,6 @@ exercitia.data = {
         'octō',
         'novem',
         'decem',
-    ],
-    '10+': [
         'ūndecim',
         'duodecim',
         'tredecim',
@@ -24,7 +22,7 @@ exercitia.data = {
         'ūndēvīgintī',
         'vīgintī',
     ],
-    '*10': [
+    '10': [
         'decem',
         'vīgintī',
         'trīgintā',
@@ -36,7 +34,7 @@ exercitia.data = {
         'nōnāgintā',
         'centum',
     ],
-    '*100': [
+    '100': [
         'centum',
         'ducentī',
         'trecentī',

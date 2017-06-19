@@ -22,17 +22,13 @@ function partem(numerus, minimum, maximum) {
 }
 
 function verbumAbNumero(numerus, data) {
-    if (numerus <= 10) {
-        // ut 8
+    if (numerus <= 20) {
+        // ut 8 aut 14
         return data['1'][numerus - 1]
-    }
-    else if (numerus <= 20) {
-        // ut 18
-        return data['10+'][numerus - 1 - 10]
     }
     else if (numerus % 10 === 0 && numerus < 100) {
         // ut 70
-        return data['*10'][numerus / 10 - 1]
+        return data['10'][numerus / 10 - 1]
     }
     else if (numerus % 10 === 8 && numerus < 100 - 2) {
         // ut 88, non 88
@@ -44,7 +40,7 @@ function verbumAbNumero(numerus, data) {
     }
     else if (numerus % 100 === 0 && numerus <= 1000) {
         // ut 700
-        return data['*100'][numerus / 100 - 1]
+        return data['100'][numerus / 100 - 1]
     }
     else if (numerus < 2000) {
         // Numerus compostus
