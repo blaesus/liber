@@ -87,7 +87,6 @@ function nescio() {
 
 bullaNescio.onclick = nescio
 document.body.onkeydown = (event) => {
-    console.info(event.keyCode)
     if (event.keyCode === KEY_ESC) {
         nescio()
     }
