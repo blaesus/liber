@@ -64,7 +64,7 @@ function aequine(numerus, verba, configuratio) {
 
 function verificare() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
-    if (aequine(numerus, verbaDOM.innerHTML)) {
+    if (aequine(numerus, verbaDOM.innerText)) {
         indicium.innerHTML = 'Vērum!'
     }
     else {
