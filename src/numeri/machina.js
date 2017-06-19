@@ -3,14 +3,10 @@ var numerusDOM = document.querySelector('.numerus')
 var bullaVerumne = document.querySelector('.bulla.verumne')
 var indicium = document.querySelector('.indicium')
 
+const KEY_ENTER = 13
+
 function quidquidIntegerNumerus(initium, finis) {
     return Math.floor(Math.random() * (finis - initium + 1)) + initium;
-}
-
-function novamExercitiaFacere() {
-    verbaDOM.value = ''
-    indicium.innerHTML = ''
-    numerusDOM.innerHTML = quidquidIntegerNumerus(100, 1000)
 }
 
 // partem(12345, 1)    ===  40
@@ -61,7 +57,9 @@ function aequine(numerus, verba, configuratio) {
     return verbumAbNumero(numerus, exercitia.data) === verba
 }
 
-bullaVerumne.onclick = function() {
+// DOM
+
+function verificare() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
     if (aequine(numerus, verbaDOM.value)) {
         indicium.innerHTML = 'Vērum!'
@@ -69,6 +67,19 @@ bullaVerumne.onclick = function() {
     else {
         indicium.innerHTML = 'Nōn vērum est. Cōnāre iterum?'
     }
+}
+
+bullaVerumne.onclick = verificare
+verbaDOM.onkeypress = (event) => {
+    if (event.charCode === KEY_ENTER) {
+        verificare()
+    }
+}
+
+function novamExercitiaFacere() {
+    verbaDOM.value = ''
+    indicium.innerHTML = ''
+    numerusDOM.innerHTML = quidquidIntegerNumerus(1, 1000)
 }
 
 novamExercitiaFacere()
