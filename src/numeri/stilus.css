@@ -9,6 +9,7 @@ body {
 .verba {
     display: inline-block;
     width: 20em;
+    max-width: 95%;
     border: 1px solid black;
 }
 
