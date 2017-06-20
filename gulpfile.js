@@ -86,7 +86,7 @@ gulp.task('make',
 )
 
 gulp.task('deploy', ['make'], () => {
-  shell.task('rsync -azP .built/* ${HOME_SERVER}:/var/www/html')
+  shell.task(`rsync -azP .built/* ${process.env.HOME_SERVER}:/var/www/html`)()
 })
 
 gulp.task('dev', () => {
