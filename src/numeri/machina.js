@@ -8,6 +8,7 @@ const dom = {
 }
 
 const status = {
+    numerus: 1,
     // arabicus litterae romanicus
     ab: 'arabicus',
     ad: 'litterae',
@@ -32,6 +33,9 @@ function partem(numerus, minimum, maximum) {
 }
 
 function verbumAbNumero(numerus, data) {
+    if (!data) {
+        data = window.exercitia.data
+    }
     if (numerus <= 20) {
         // ut 8 aut 14
         return data['1'][numerus - 1]
@@ -107,13 +111,36 @@ function modosPingere() {
     document.querySelector(`.ad span.${status.ad}`).classList.add('illustrans')
 }
 
-function novumExercitiumFacere() {
+function numerumPingere() {
+    switch (status.ab) {
+        case 'arabicus': {
+            dom.numerus.innerHTML = status.numerus
+            console.info(dom.numerus.innerHTML)
+            break
+        }
+        case 'litterae': {
+            dom.numerus.innerHTML = verbumAbNumero(status.numerus)
+            console.info(dom.numerus.innerHTML)
+            break
+        }
+    }
+}
+
+function aliumPingere() {
     dom.verba.innerHTML = ''
     dom.indicium.innerHTML = ''
     dom.bullaNovumNumerum.style.display = 'none'
-    dom.numerus.innerHTML = quidquidIntegerNumerus(1, 1000)
+}
 
+function pigere() {
     modosPingere()
+    numerumPingere()
+    aliumPingere()
+}
+
+function novumExercitiumFacere() {
+    status.numerus = quidquidIntegerNumerus(1, 1000)
+    pigere()
 }
 
 function formam(className) {
@@ -153,7 +180,7 @@ for (let node of document.querySelectorAll('.arca-modi')) {
             if (status[contra(modus)] === forma) {
                 status[contra(modus)] = secunda(forma)
             }
-            modosPingere()
+            pigere()
         }
     }
 }
