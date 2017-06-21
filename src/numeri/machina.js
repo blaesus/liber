@@ -7,6 +7,12 @@ const dom = {
     indicium: document.querySelector('.indicium'),
 }
 
+const state = {
+    // arabicus litterae romanicus
+    ab: 'arabicus',
+    ad: 'litterae',
+}
+
 const KEY_ENTER = 13
 const KEY_ESC = 27
 
@@ -96,6 +102,12 @@ function novumExercitiumFacere() {
     dom.indicium.innerHTML = ''
     dom.bullaNovumNumerum.style.display = 'none'
     dom.numerus.innerHTML = quidquidIntegerNumerus(1, 1000)
+
+    ;[].slice.apply(document.querySelectorAll(`.arca-modi span`))
+    .map(node => node.classList.remove('illustrans'))
+
+    document.querySelector(`.ab span.${state.ab}`).classList.add('illustrans')
+    document.querySelector(`.ad span.${state.ad}`).classList.add('illustrans')
 }
 
 dom.bullaNovumNumerum.onclick = novumExercitiumFacere

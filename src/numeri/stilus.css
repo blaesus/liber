@@ -30,3 +30,23 @@ body {
 .novum-numerum {
     display: none;
 }
+
+.modi {
+    float: right;
+    font-size: 0.8em;
+}
+
+.arca-modi {
+    text-align: center;
+}
+
+.arca-modi span {
+    display: inline-block;
+    border: 1px dashed #999;
+    cursor: pointer;
+    min-width: 1em;
+}
+
+.arca-modi span.illustrans {
+    border: 2px solid black;
+}
