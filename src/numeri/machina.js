@@ -1,9 +1,11 @@
-const verbaDOM = document.querySelector('.verba')
-const numerusDOM = document.querySelector('.numerus')
-const bullaVerumne = document.querySelector('.bulla.verumne')
-const bullaNescio = document.querySelector('.bulla.nescio')
-const bullaNovumNumerum = document.querySelector('.bulla.novum-numerum')
-const indicium = document.querySelector('.indicium')
+const dom = {
+    verba: document.querySelector('.verba'),
+    numerus: document.querySelector('.numerus'),
+    bullaVerumne: document.querySelector('.bulla.verumne'),
+    bullaNescio: document.querySelector('.bulla.nescio'),
+    bullaNovumNumerum: document.querySelector('.bulla.novum-numerum'),
+    indicium: document.querySelector('.indicium'),
+}
 
 const KEY_ENTER = 13
 const KEY_ESC = 27
@@ -59,17 +61,17 @@ function aequine(numerus, verba, configuratio) {
 // DOM
 
 function verificare() {
-    var numerus = parseInt(numerusDOM.innerHTML, 10)
-    if (aequine(numerus, verbaDOM.innerText)) {
-        indicium.innerHTML = 'Vērum!'
+    var numerus = parseInt(dom.numerus.innerHTML, 10)
+    if (aequine(numerus, dom.verba.innerText)) {
+        dom.indicium.innerHTML = 'Vērum!'
     }
     else {
-        indicium.innerHTML = 'Nōn vērum est. Cōnāre iterum?'
+        dom.indicium.innerHTML = 'Nōn vērum est. Cōnāre iterum?'
     }
 }
 
-bullaVerumne.onclick = verificare
-verbaDOM.onkeypress = (event) => {
+dom.bullaVerumne.onclick = verificare
+dom.verba.onkeypress = (event) => {
     if (event.charCode === KEY_ENTER) {
         event.preventDefault()
         verificare()
@@ -78,11 +80,11 @@ verbaDOM.onkeypress = (event) => {
 
 function nescio() {
     var numerus = parseInt(numerusDOM.innerHTML, 10)
-    indicium.innerHTML = verbumAbNumero(numerus, exercitia.data)
-    bullaNovumNumerum.style.display = 'inline-block'
+    dom.indicium.innerHTML = verbumAbNumero(numerus, exercitia.data)
+    dom.bullaNovumNumerum.style.display = 'inline-block'
 }
 
-bullaNescio.onclick = nescio
+dom.bullaNescio.onclick = nescio
 document.body.onkeydown = (event) => {
     if (event.keyCode === KEY_ESC) {
         nescio()
@@ -90,13 +92,13 @@ document.body.onkeydown = (event) => {
 }
 
 function novumExercitiumFacere() {
-    verbaDOM.innerHTML = ''
-    indicium.innerHTML = ''
-    bullaNovumNumerum.style.display = 'none'
-    numerusDOM.innerHTML = quidquidIntegerNumerus(1, 1000)
+    dom.verba.innerHTML = ''
+    dom.indicium.innerHTML = ''
+    dom.bullaNovumNumerum.style.display = 'none'
+    dom.numerus.innerHTML = quidquidIntegerNumerus(1, 1000)
 }
 
-bullaNovumNumerum.onclick = novumExercitiumFacere
+dom.bullaNovumNumerum.onclick = novumExercitiumFacere
 
 novumExercitiumFacere()
-verbaDOM.focus()
+dom.verba.focus()
