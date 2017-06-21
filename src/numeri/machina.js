@@ -87,7 +87,7 @@ dom.verba.onkeypress = (event) => {
 }
 
 function nescio() {
-    var numerus = parseInt(numerusDOM.innerHTML, 10)
+    var numerus = parseInt(dom.numerus.innerHTML, 10)
     dom.indicium.innerHTML = verbumAbNumero(numerus, exercitia.data)
     dom.bullaNovumNumerum.style.display = 'inline-block'
 }
