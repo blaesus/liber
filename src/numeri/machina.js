@@ -7,7 +7,7 @@ const dom = {
     indicium: document.querySelector('.indicium'),
 }
 
-const state = {
+const status = {
     // arabicus litterae romanicus
     ab: 'arabicus',
     ad: 'litterae',
@@ -97,19 +97,59 @@ document.body.onkeydown = (event) => {
     }
 }
 
+function modosPingere() {
+    ;[].slice.apply(document.querySelectorAll(`.arca-modi span`))
+    .map(node => node.classList.remove('illustrans', 'invalidus'))
+
+    document.querySelector(`.ab span.${status.ab}`).classList.add('illustrans')
+    document.querySelector(`.ad span.${status.ad}`).classList.add('illustrans')
+    document.querySelector(`.ab span.${status.ad}`).classList.add('invalidus')
+    document.querySelector(`.ad span.${status.ab}`).classList.add('invalidus')
+}
+
 function novumExercitiumFacere() {
     dom.verba.innerHTML = ''
     dom.indicium.innerHTML = ''
     dom.bullaNovumNumerum.style.display = 'none'
     dom.numerus.innerHTML = quidquidIntegerNumerus(1, 1000)
 
-    ;[].slice.apply(document.querySelectorAll(`.arca-modi span`))
-    .map(node => node.classList.remove('illustrans'))
+    modosPingere()
+}
 
-    document.querySelector(`.ab span.${state.ab}`).classList.add('illustrans')
-    document.querySelector(`.ad span.${state.ad}`).classList.add('illustrans')
-    document.querySelector(`.ab span.${state.ad}`).classList.add('invalidus')
-    document.querySelector(`.ad span.${state.ab}`).classList.add('invalidus')
+function formam(className) {
+    const regex = className.match(/arabicus|litterae|romanicus/)
+    return regex ? regex[0] : regex
+}
+
+function modum(className) {
+    const regex = className.match(/ab|ad/)
+    return regex ? regex[0] : regex
+}
+
+function contra(directio) {
+    if (directio === 'ad') {
+        return 'ab'
+    }
+    else {
+        return 'ad'
+    }
+}
+
+function validine(modus, forma) {
+    return modus && forma
+        && status[modus] !== forma
+        && status[contra(modus)] !== forma
+}
+
+for (let node of document.querySelectorAll('.arca-modi')) {
+    node.onclick = (event) => {
+        const modus = modum(event.currentTarget.className)
+        const forma = formam(event.target.className)
+        if (validine(modus, forma)) {
+            status[modus] = forma
+            modosPingere()
+        }
+    }
 }
 
 dom.bullaNovumNumerum.onclick = novumExercitiumFacere
