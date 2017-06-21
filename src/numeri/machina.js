@@ -131,8 +131,7 @@ dom.responsum.onkeypress = (event) => {
 }
 
 function nescio() {
-    var numerus = parseInt(dom.numerus.innerHTML, 10)
-    dom.indicium.innerHTML = arabicoVerbas(numerus, exercitia.data)
+    dom.indicium.innerHTML = arabicoFormam(status.numerus, status.ad)
     dom.bullaNovumNumerum.style.display = 'inline-block'
 }
 
@@ -157,7 +156,7 @@ function numerumPingere() {
             dom.numerus.innerHTML = status.numerus
             break
         }
-        case 'verba': {
+        case 'verbae': {
             dom.numerus.innerHTML = arabicoVerbas(status.numerus)
             break
         }
