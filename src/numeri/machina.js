@@ -7,11 +7,32 @@ const dom = {
     indicium: document.querySelector('.indicium'),
 }
 
-const status = {
-    numerus: 1,
-    // arabicus verbae romanicus
-    ab: 'arabicus',
-    ad: 'verbae',
+let status = statusFacere()
+
+function princepsStatus() {
+    return {
+        numerus: 1,
+        // arabicus verbae romanicus
+        ab: 'arabicus',
+        ad: 'verbae',
+    }
+}
+
+function statusFacere() {
+    let priorStatus
+    try {
+        priorStatus = localStorage.getItem('status')
+    }
+    catch (error) {
+        return princepsStatus()
+    }
+
+    if (priorStatus) {
+        return JSON.parse(priorStatus)
+    }
+    else {
+        return princepsStatus()
+    }
 }
 
 const formae = ['arabicus', 'verbae', 'romanicus']
@@ -177,6 +198,11 @@ function pigere() {
     modosPingere()
     numerumPingere()
     aliumPingere()
+
+    try {
+        localStorage.setItem('status', JSON.stringify(status))
+    }
+    catch (error) {}
 }
 
 function novumExercitiumFacere() {
