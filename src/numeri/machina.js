@@ -9,6 +9,9 @@ const dom = {
 
 let condiciones = condicionesFacere()
 
+const MINIMUM = 1
+const MAXIMUM = 1999
+
 function princepesCondiciones() {
     return {
         numerus: 1,
@@ -207,7 +210,7 @@ function pigere() {
 }
 
 function novumExercitiumFacere() {
-    condiciones.numerus = quidquidIntegerNumerus(1, 1000)
+    condiciones.numerus = quidquidIntegerNumerus(MINIMUM, MAXIMUM)
     pigere()
 }
 
