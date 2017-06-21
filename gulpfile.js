@@ -69,7 +69,10 @@ gulp.task('inline-source-into-html', ['build', 'import-css', 'optimize-css', 'op
 
 gulp.task('minify-html', ['inline-source-into-html'], () => {
   return gulp.src('./.built/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+    }))
     .pipe(gulp.dest('./.built'))
 })
 
