@@ -45,7 +45,8 @@ body section {
 .arca-modi span {
     box-sizing: border-box;
     display: inline-block;
-    border: 1px solid #999;
+    border: 1px dashed #999;
+    color: #888;
     cursor: pointer;
     min-width: 1.2em;
     padding: 0 0.1em;
@@ -53,9 +54,4 @@ body section {
 
 .arca-modi span.illustrans {
     border: 2px solid black;
-}
-
-.arca-modi span.invalidus {
-    border: 1px dashed #999;
-    color: #888;
 }

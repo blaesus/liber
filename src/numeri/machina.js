@@ -13,6 +13,8 @@ const status = {
     ad: 'litterae',
 }
 
+const formae = ['arabicus', 'litterae', 'romanicus']
+
 const KEY_ENTER = 13
 const KEY_ESC = 27
 
@@ -99,12 +101,10 @@ document.body.onkeydown = (event) => {
 
 function modosPingere() {
     ;[].slice.apply(document.querySelectorAll(`.arca-modi span`))
-    .map(node => node.classList.remove('illustrans', 'invalidus'))
+    .map(node => node.classList.remove('illustrans'))
 
     document.querySelector(`.ab span.${status.ab}`).classList.add('illustrans')
     document.querySelector(`.ad span.${status.ad}`).classList.add('illustrans')
-    document.querySelector(`.ab span.${status.ad}`).classList.add('invalidus')
-    document.querySelector(`.ad span.${status.ab}`).classList.add('invalidus')
 }
 
 function novumExercitiumFacere() {
@@ -135,18 +135,24 @@ function contra(directio) {
     }
 }
 
-function validine(modus, forma) {
-    return modus && forma
-        && status[modus] !== forma
-        && status[contra(modus)] !== forma
+function secunda(forma) {
+    for (let formaSecunda of formae) {
+        if (formaSecunda !== forma) {
+            return formaSecunda
+        }
+    }
+    return formae[0]
 }
 
 for (let node of document.querySelectorAll('.arca-modi')) {
     node.onclick = (event) => {
         const modus = modum(event.currentTarget.className)
         const forma = formam(event.target.className)
-        if (validine(modus, forma)) {
+        if (modus && forma) {
             status[modus] = forma
+            if (status[contra(modus)] === forma) {
+                status[contra(modus)] = secunda(forma)
+            }
             modosPingere()
         }
     }
