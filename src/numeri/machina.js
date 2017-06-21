@@ -139,7 +139,9 @@ function arabicoFormam(arabicus, forma) {
 // DOM
 
 function verificare() {
-    if (dom.responsum.innerText === arabicoFormam(condiciones.numerus, condiciones.ad)) {
+    const responsum = dom.responsum.innerText
+    const veritas = arabicoFormam(condiciones.numerus, condiciones.ad)
+    if (responsum.toLowerCase() === veritas.toLowerCase()) {
         dom.indicium.innerHTML = 'Vērum!'
     }
     else {
