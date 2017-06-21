@@ -117,7 +117,7 @@ function arabicoVerbas(numerus, data) {
 function arabicoFormam(arabicus, forma) {
     switch (forma) {
         case 'arabicus': {
-            return arabicus
+            return String(arabicus)
         }
         case 'verbae': {
             return arabicoVerbas(arabicus)
@@ -127,7 +127,7 @@ function arabicoFormam(arabicus, forma) {
         }
         default: {
             console.error(`Forma ignota: ${forma}`)
-            return arabicus
+            return String(arabicus)
         }
     }
 }
