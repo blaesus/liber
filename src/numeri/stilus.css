@@ -8,14 +8,14 @@ body section {
     display: block;
 }
 
-.verba {
+.responsum {
     display: inline-block;
     width: 20em;
     max-width: 95%;
     border: 1px solid black;
 }
 
-.verba, .indicium {
+.responsum, .indicium {
     font-size: 0.8em;
     margin: 0;
     padding: 0.1em;

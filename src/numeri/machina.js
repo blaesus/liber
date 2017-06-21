@@ -1,5 +1,5 @@
 const dom = {
-    verba: document.querySelector('.verba'),
+    responsum: document.querySelector('.responsum'),
     numerus: document.querySelector('.numerus'),
     bullaVerumne: document.querySelector('.bulla.verumne'),
     bullaNescio: document.querySelector('.bulla.nescio'),
@@ -9,12 +9,12 @@ const dom = {
 
 const status = {
     numerus: 1,
-    // arabicus litterae romanicus
+    // arabicus verbae romanicus
     ab: 'arabicus',
-    ad: 'litterae',
+    ad: 'verbae',
 }
 
-const formae = ['arabicus', 'litterae', 'romanicus']
+const formae = ['arabicus', 'verbae', 'romanicus']
 
 const KEY_ENTER = 13
 const KEY_ESC = 27
@@ -59,7 +59,7 @@ function partem(numerus, minimum, maximum) {
     return (numerus % Math.pow(10, maximum)) - (numerus % Math.pow(10, minimum))
 }
 
-function verbumAbNumero(numerus, data) {
+function arabicoVerbas(numerus, data) {
     if (!data) {
         data = window.exercitia.data
     }
@@ -73,11 +73,11 @@ function verbumAbNumero(numerus, data) {
     }
     else if (numerus % 10 === 8 && numerus < 100 - 2) {
         // ut 88, non 88
-        return 'duodē' + verbumAbNumero(numerus + 2, data)
+        return 'duodē' + arabicoVerbas(numerus + 2, data)
     }
     else if (numerus % 10 === 9 && numerus < 100 - 1) {
         // ut 39, non 99
-        return 'ūndē' + verbumAbNumero(numerus + 1, data)
+        return 'ūndē' + arabicoVerbas(numerus + 1, data)
     }
     else if (numerus % 100 === 0 && numerus <= 1000) {
         // ut 700
@@ -87,21 +87,34 @@ function verbumAbNumero(numerus, data) {
         // Numerus compostus
         const digiti = String(numerus).length
         return [
-            verbumAbNumero(partem(numerus, digiti - 1), data),
-            verbumAbNumero(partem(numerus, 0, digiti - 1), data),
+            arabicoVerbas(partem(numerus, digiti - 1), data),
+            arabicoVerbas(partem(numerus, 0, digiti - 1), data),
         ].join(' ')
     }
 }
 
-function aequine(numerus, verba, configuratio) {
-    return verbumAbNumero(numerus, exercitia.data) === verba
+function arabicoFormam(arabicus, forma) {
+    switch (forma) {
+        case 'arabicus': {
+            return arabicus
+        }
+        case 'verbae': {
+            return arabicoVerbas(arabicus)
+        }
+        case 'romanicus': {
+            return arabicoRomanicum(arabicus)
+        }
+        default: {
+            console.error(`Forma ignota: ${forma}`)
+            return arabicus
+        }
+    }
 }
 
 // DOM
 
 function verificare() {
-    var numerus = parseInt(dom.numerus.innerHTML, 10)
-    if (aequine(numerus, dom.verba.innerText)) {
+    if (dom.responsum.innerText === arabicoFormam(status.numerus, status.ad)) {
         dom.indicium.innerHTML = 'Vērum!'
     }
     else {
@@ -110,7 +123,7 @@ function verificare() {
 }
 
 dom.bullaVerumne.onclick = verificare
-dom.verba.onkeypress = (event) => {
+dom.responsum.onkeypress = (event) => {
     if (event.charCode === KEY_ENTER) {
         event.preventDefault()
         verificare()
@@ -119,7 +132,7 @@ dom.verba.onkeypress = (event) => {
 
 function nescio() {
     var numerus = parseInt(dom.numerus.innerHTML, 10)
-    dom.indicium.innerHTML = verbumAbNumero(numerus, exercitia.data)
+    dom.indicium.innerHTML = arabicoVerbas(numerus, exercitia.data)
     dom.bullaNovumNumerum.style.display = 'inline-block'
 }
 
@@ -144,8 +157,8 @@ function numerumPingere() {
             dom.numerus.innerHTML = status.numerus
             break
         }
-        case 'litterae': {
-            dom.numerus.innerHTML = verbumAbNumero(status.numerus)
+        case 'verba': {
+            dom.numerus.innerHTML = arabicoVerbas(status.numerus)
             break
         }
         case 'romanicus': {
@@ -156,7 +169,7 @@ function numerumPingere() {
 }
 
 function aliumPingere() {
-    dom.verba.innerHTML = ''
+    dom.responsum.innerHTML = ''
     dom.indicium.innerHTML = ''
     dom.bullaNovumNumerum.style.display = 'none'
 }
@@ -173,7 +186,7 @@ function novumExercitiumFacere() {
 }
 
 function formam(className) {
-    const regex = className.match(/arabicus|litterae|romanicus/)
+    const regex = className.match(/arabicus|verbae|romanicus/)
     return regex ? regex[0] : regex
 }
 
@@ -217,4 +230,4 @@ for (let node of document.querySelectorAll('.arca-modi')) {
 dom.bullaNovumNumerum.onclick = novumExercitiumFacere
 
 novumExercitiumFacere()
-dom.verba.focus()
+dom.responsum.focus()
