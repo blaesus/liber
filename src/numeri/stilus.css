@@ -33,7 +33,7 @@ body {
 
 .modi {
     float: right;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 .arca-modi {
@@ -41,12 +41,19 @@ body {
 }
 
 .arca-modi span {
+    box-sizing: border-box;
     display: inline-block;
-    border: 1px dashed #999;
+    border: 1px solid #999;
     cursor: pointer;
-    min-width: 1em;
+    min-width: 1.2em;
+    padding: 0 0.1em;
 }
 
 .arca-modi span.illustrans {
     border: 2px solid black;
+}
+
+.arca-modi span.invalidus {
+    border: 1px dashed #999;
+    color: #888;
 }

@@ -108,6 +108,8 @@ function novumExercitiumFacere() {
 
     document.querySelector(`.ab span.${state.ab}`).classList.add('illustrans')
     document.querySelector(`.ad span.${state.ad}`).classList.add('illustrans')
+    document.querySelector(`.ab span.${state.ad}`).classList.add('invalidus')
+    document.querySelector(`.ad span.${state.ab}`).classList.add('invalidus')
 }
 
 dom.bullaNovumNumerum.onclick = novumExercitiumFacere
