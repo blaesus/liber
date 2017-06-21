@@ -1,9 +1,11 @@
-section {
-    display: block;
-}
-
 body {
     font: 30px serif;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+body section {
+    display: block;
 }
 
 .verba {
