@@ -7,9 +7,9 @@ const dom = {
     indicium: document.querySelector('.indicium'),
 }
 
-let status = statusFacere()
+let condiciones = condicionesFacere()
 
-function princepsStatus() {
+function princepesCondiciones() {
     return {
         numerus: 1,
         // arabicus verbae romanicus
@@ -18,20 +18,21 @@ function princepsStatus() {
     }
 }
 
-function statusFacere() {
-    let priorStatus
+function condicionesFacere() {
+    let prioresCondiciones
     try {
-        priorStatus = localStorage.getItem('status')
+        prioresCondiciones = localStorage.getItem('condiciones')
     }
     catch (error) {
-        return princepsStatus()
+        return princepesCondiciones()
     }
 
-    if (priorStatus) {
-        return JSON.parse(priorStatus)
+    if (prioresCondiciones) {
+        return JSON.parse(prioresCondiciones)
+        
     }
     else {
-        return princepsStatus()
+        return princepesCondiciones()
     }
 }
 
@@ -135,7 +136,7 @@ function arabicoFormam(arabicus, forma) {
 // DOM
 
 function verificare() {
-    if (dom.responsum.innerText === arabicoFormam(status.numerus, status.ad)) {
+    if (dom.responsum.innerText === arabicoFormam(condiciones.numerus, condiciones.ad)) {
         dom.indicium.innerHTML = 'Vērum!'
     }
     else {
@@ -152,7 +153,7 @@ dom.responsum.onkeypress = (event) => {
 }
 
 function nescio() {
-    dom.indicium.innerHTML = arabicoFormam(status.numerus, status.ad)
+    dom.indicium.innerHTML = arabicoFormam(condiciones.numerus, condiciones.ad)
     dom.bullaNovumNumerum.style.display = 'inline-block'
 }
 
@@ -167,22 +168,22 @@ function modosPingere() {
     ;[].slice.apply(document.querySelectorAll(`.arca-modi span`))
     .map(node => node.classList.remove('illustrans'))
 
-    document.querySelector(`.ab span.${status.ab}`).classList.add('illustrans')
-    document.querySelector(`.ad span.${status.ad}`).classList.add('illustrans')
+    document.querySelector(`.ab span.${condiciones.ab}`).classList.add('illustrans')
+    document.querySelector(`.ad span.${condiciones.ad}`).classList.add('illustrans')
 }
 
 function numerumPingere() {
-    switch (status.ab) {
+    switch (condiciones.ab) {
         case 'arabicus': {
-            dom.numerus.innerHTML = status.numerus
+            dom.numerus.innerHTML = condiciones.numerus
             break
         }
         case 'verbae': {
-            dom.numerus.innerHTML = arabicoVerbas(status.numerus)
+            dom.numerus.innerHTML = arabicoVerbas(condiciones.numerus)
             break
         }
         case 'romanicus': {
-            dom.numerus.innerHTML = arabicoRomanicum(status.numerus)
+            dom.numerus.innerHTML = arabicoRomanicum(condiciones.numerus)
             break
         }
     }
@@ -200,13 +201,13 @@ function pigere() {
     aliumPingere()
 
     try {
-        localStorage.setItem('status', JSON.stringify(status))
+        localStorage.setItem('condiciones', JSON.stringify(condiciones))
     }
     catch (error) {}
 }
 
 function novumExercitiumFacere() {
-    status.numerus = quidquidIntegerNumerus(1, 1000)
+    condiciones.numerus = quidquidIntegerNumerus(1, 1000)
     pigere()
 }
 
@@ -243,9 +244,9 @@ for (let node of document.querySelectorAll('.arca-modi')) {
         const modus = modum(event.currentTarget.className)
         const forma = formam(event.target.className)
         if (modus && forma) {
-            status[modus] = forma
-            if (status[contra(modus)] === forma) {
-                status[contra(modus)] = secunda(forma)
+            condiciones[modus] = forma
+            if (condiciones[contra(modus)] === forma) {
+                condiciones[contra(modus)] = secunda(forma)
             }
             pigere()
         }
