@@ -124,9 +124,9 @@ function Canvas(svg) {
 
 function initialize() {
     const canvas = new Canvas(document.querySelector('.main'))
-    canvas.addVector('me', 'blue', [0.5, -0.1])
-    canvas.addVector('you', 'red', [-0.5, -0.5])
-    canvas.addVector('action', 'black', [0.1, -0.8])
+    canvas.addVector('me', 'blue', [0.8, -0.3])
+    canvas.addVector('you', 'red', [-0.1, -0.7])
+    canvas.addVector('action', 'black', [0.3, -0.5])
 }
 
 function main() {
