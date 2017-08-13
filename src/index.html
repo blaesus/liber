@@ -120,15 +120,25 @@
           September 2015
         </time>
         <div class="email-line">
-          contact me:
+
+          <span style="float: left; margin-right: 0.8em;">
+            contact me:
+          </span>
           <div class="email">
             andy at [this domain]
           </div>
           <script>
-             var s = 'andy'
-             s += '&#x40'
-             s += 'sym<span></span>bol.is'
-             document.querySelector('.email').innerHTML = s
+            var emailDom = document.querySelector('.email') 
+            var s = 'andy'
+            s += '&#x40'
+            s += 'sym<span></span>bol.is'
+            emailDom.innerHTML = s
+
+            if (window.getSelection) {
+              emailDom.addEventListener('click', function() {
+                window.getSelection().selectAllChildren( emailDom )
+              })
+            }
           </script>
         </div>
       </li>
