@@ -24,6 +24,29 @@ function Circle(label, center, fill) {
     )
 }
 
+function Line(commands) {
+    return new SvgElement(
+        'path',
+        {
+            d: commands
+        },
+        {
+            stroke: 'black'
+        }
+    )
+}
+
+function drawAxes(svg) {
+    const width = svg.width.baseVal.value
+    const height = svg.height.baseVal.value
+    svg.appendChild(new Line(`
+        M 0 ${height/2}
+        L ${width} ${height/2}
+        M ${width/2} 0
+        L ${width/2} ${height}
+    `))
+}
+
 function Canvas(svg) {
     const svgRef = [
         svg.getBoundingClientRect().left,
@@ -36,6 +59,8 @@ function Canvas(svg) {
     ]
 
     let dragTarget = null
+
+    drawAxes(svg)
 
     svg.onmousedown = event => {
         if (event.target.tagName === 'circle') {
