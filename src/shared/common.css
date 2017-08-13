@@ -1,5 +1,9 @@
 @import url('./normalize-4.1.1.css');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0.5em;
     font: 16px "Lucida Grande", "Helvetica", sans-serif;
