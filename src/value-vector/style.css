@@ -19,3 +19,8 @@ body .main {
     width: 100%;
     border: 1px solid;
 }
+
+circle:hover {
+    stroke: black;
+    stroke-width: 3px;
+}
