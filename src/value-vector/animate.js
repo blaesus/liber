@@ -1,4 +1,9 @@
-function SvgElement(type='', attributes={}, styles={}) {
+function SvgElement(
+    type='',
+    attributes={},
+    styles={},
+    moveTo=()=>{}
+) {
     const obj = document.createElementNS("http://www.w3.org/2000/svg", type)
     for (let key in attributes) {
         obj.setAttribute(key, attributes[key])
@@ -6,6 +11,7 @@ function SvgElement(type='', attributes={}, styles={}) {
     for (let key in styles) {
         obj.style[key] = styles[key]
     }
+    obj.moveTo = moveTo
     return obj
 }
 
@@ -20,18 +26,23 @@ function Circle(label, center, fill) {
         },
         {
             fill: fill
+        },
+        function(x, y) {
+            this.setAttribute('cx', x)
+            this.setAttribute('cy', y)
         }
     )
 }
 
-function Line(commands) {
+function Line(pointA, pointB, styles={stroke: 'black'}) {
     return new SvgElement(
         'path',
         {
-            d: commands
+            d: `M ${pointA[0]} ${pointA[1]} L ${pointB[0]} ${pointB[1]}`
         },
-        {
-            stroke: 'black'
+        styles,
+        function(x, y) {
+            this.setAttribute('d', `M ${pointA[0]} ${pointA[1]} L ${x} ${y}`)
         }
     )
 }
@@ -39,12 +50,14 @@ function Line(commands) {
 function drawAxes(svg) {
     const width = svg.width.baseVal.value
     const height = svg.height.baseVal.value
-    svg.appendChild(new Line(`
-        M 0 ${height/2}
-        L ${width} ${height/2}
-        M ${width/2} 0
-        L ${width/2} ${height}
-    `))
+    svg.appendChild(new Line(
+        [0,     height/2],
+        [width, height/2],
+    ))
+    svg.appendChild(new Line(
+        [width/2, 0     ],
+        [width/2, height],
+    ))
 }
 
 function Canvas(svg) {
@@ -52,40 +65,55 @@ function Canvas(svg) {
         svg.getBoundingClientRect().left,
         svg.getBoundingClientRect().top,
     ]
-
     const center = [
         svg.width.baseVal.value / 2,
         svg.height.baseVal.value / 2,
     ]
 
-    let dragTarget = null
+    let dragTargetLabel = ''
+    const objects = {}
 
     drawAxes(svg)
 
     svg.onmousedown = event => {
         if (event.target.tagName === 'circle') {
-            dragTarget = event.target
+            dragTargetLabel = event.target.className.baseVal
         }
         else {
-            dragTarget = null
+            dragTargetLabel = ''
         }
     }
 
     svg.onmousemove = event => {
-        if (dragTarget) {
+        if (dragTargetLabel) {
             const x = event.clientX - svgRef[0]
             const y = event.clientY - svgRef[1]
-            dragTarget.setAttribute('cx', x)
-            dragTarget.setAttribute('cy', y)
+            objects[dragTargetLabel].circle.moveTo(x, y)
+            objects[dragTargetLabel].line.moveTo(x, y)
         }
     }
 
-    svg.onmouseup = () => dragTarget = null
+    svg.onmouseup = () => dragTargetLabel = null
 
     return {
         addVector(label, fill) {
-            svg.appendChild(new Circle(label, center, fill))
-        }
+            const circle = new Circle(label, center, fill)
+            const line = new Line(
+                [center[0], center[1]],
+                [center[0], center[1]],
+                {
+                    stroke: 'black',
+                    strokeWidth: '2',
+                }
+            )
+            svg.appendChild(line)
+            svg.appendChild(circle)
+
+            objects[label] = {
+                circle,
+                line,
+            }
+        },
     }
 }
 
