@@ -47,33 +47,32 @@ function Line(pointA, pointB, styles={stroke: 'black'}) {
     )
 }
 
-function drawAxes(svg) {
-    const width = svg.width.baseVal.value
-    const height = svg.height.baseVal.value
-    svg.appendChild(new Line(
-        [0,     height/2],
-        [width, height/2],
-    ))
-    svg.appendChild(new Line(
-        [width/2, 0     ],
-        [width/2, height],
-    ))
-}
 
 function Canvas(svg) {
     const svgRef = [
         svg.getBoundingClientRect().left,
         svg.getBoundingClientRect().top,
     ]
+    const width = svg.width.baseVal.value
+    const height = svg.height.baseVal.value
     const center = [
-        svg.width.baseVal.value / 2,
-        svg.height.baseVal.value / 2,
+        width / 2,
+        height / 2,
     ]
 
     let dragTargetLabel = ''
     const objects = {}
 
-    drawAxes(svg)
+    function drawAxes(svg) {
+        svg.appendChild(new Line(
+            [0,     height/2],
+            [width, height/2],
+        ))
+        svg.appendChild(new Line(
+            [width/2, 0     ],
+            [width/2, height],
+        ))
+    }
 
     svg.onmousedown = event => {
         if (event.target.tagName === 'circle') {
@@ -93,14 +92,20 @@ function Canvas(svg) {
         }
     }
 
-    svg.onmouseup = () => dragTargetLabel = null
+    svg.onmouseup = () => dragTargetLabel = ''
+
+    drawAxes(svg)
 
     return {
-        addVector(label, fill) {
-            const circle = new Circle(label, center, fill)
+        addVector(label, fill, endPointRatio=[0, 0]) {
+            const endPoint = [
+                (width + width * endPointRatio[0]) / 2,
+                (height + height * endPointRatio[1]) / 2,
+            ]
+            const circle = new Circle(label, endPoint, fill)
             const line = new Line(
                 [center[0], center[1]],
-                [center[0], center[1]],
+                [endPoint[0], endPoint[1]],
                 {
                     stroke: 'black',
                     strokeWidth: '2',
@@ -119,8 +124,9 @@ function Canvas(svg) {
 
 function initialize() {
     const canvas = new Canvas(document.querySelector('.main'))
-    canvas.addVector('me', 'blue')
-    canvas.addVector('you', 'red')
+    canvas.addVector('me', 'blue', [0.5, -0.1])
+    canvas.addVector('you', 'red', [-0.5, -0.5])
+    canvas.addVector('action', 'black', [0.1, -0.8])
 }
 
 function main() {
