@@ -9,7 +9,7 @@ body {
     font: 16px "Lucida Grande", "Helvetica", sans-serif;
     line-height: 1.5;
     margin: 0 auto;
-    max-width: 480px;
+    max-width: 640px;
 }
 
 @media screen and (min-width: 480px) {
