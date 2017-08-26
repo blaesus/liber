@@ -1,45 +1,214 @@
 <!--=include ../shared/partials/head.html -->
 
-<h1>What is Programming</h1>
+<style>
+	pre { 
+		margin: 0;
+		border: 1px dashed;
+		padding: 0.5em;
+	}
+
+	.note {
+		font-size: 0.8em;
+	}
+
+	ol li {
+		list-style-type: lower-latin;
+	}
+</style>
+
+<h1>How Programming Works</h1>
 
 <h2>I. Computers are special machines</h2>
 
 <p>
-Computer programming is about giving instructions to a computer to change its functions.
+Programming is about giving instructions to a computer to change its functions.
 	
 <p>
-Pretty simple idea, right? Well, this is really like sorcery when you think about it: Most other machines perform only specific tasks. A car moves you around, a freezer cools your food, and a typewriter types letters.
-
-Your car would never freeze anything, nor could your typewriter be used for transportation.
+Pretty simple idea, right? Well, this should sound like sorcery to someone unfamiliar with modern computers: most other machines only perform pre-defined tasks — a car moves you around and a typewriter types letters; your car doesn’t print letters, nor could a typewriter be used for transportation.
 
 <p>
-Yet, a modern computer possesses seemingly infinite capabilities: it can play music, show you Wikipedia, display an interactive calendar, etc. More interestingly, you can download a new application to expand its powers, i.e., you can easily modify the machine so that it does what it wasn't specifically designed to do.
+Yet, a modern computer is capable of seemingly infinite functions: it can play music, show you Wikipedia, display an interactive calendar, etc. More interestingly, you can easily download new applications to expand its powers beyond what it was initially designed for.
 
 <p>
 Why?
 
 <p>
-<b>Because computers accept programs</b>.
+<b>Because computers can be modified with programs</b>.
 
 <p>
-You see, it has always been possible to give instructions to machines: you step on the brake and the car decelerates; you press "s" and the typewriter imprints an "s" on the paper.
+You see, it has always been possible to give instructions to machines: you step on the brake and the car decelerates; you press the <i>s</i> key and the typewriter imprints an <i>s</i> on the paper.
 
 <p>
-What makes computers special is that you can change the way they handle <i>future instructions</i> (without physical alterations). The brake pedal on a car always brakes (thankfully), no matter how you use the car, the "s" key on a typewriter always means letter "s", but on a computer, they "s" key may mean letter "s" in MS Word, or "go back" in a shooter game, or "stop" in a music player, depending on which program is running.
+What makes computers special is that you can change the way they handle <i>future instructions</i>, without physical alterations. The brake pedal on a car always brakes (thankfully), no matter how you use the car, just as the <i>s</i> key on a typewriter always means letter <i>s</i>. This is because a car and a typewriter are defined solely by their <i>physical structures</i>. If you are to pull a prank on a friend and make his typewriter type <i>m</i> when <i>s</i> is pressed, you’ll have to rewire its mechanical parts, perhaps even having to redesign the whole machine.
+
 
 <p>
-If you want to pull a prank on a friend and make his typewriter type "m" when "s" is pressed, it'll probably take you hours if not days to rewire the mechanical parts, perhaps even having to redesign the whole thing to make it work. However, it only takes a few lines of code to achieve the same effect on a computer (depending on the operating system).
+Computers are a bit different. You can input different programs and change how they work. On a computer, the <i>s</i> key could mean letter <i>s</i> in MS Word, or “go back” in a shooter game, or “stop” in a music player. It depends on which program you’re running. On a computer, it only takes a few lines of code to rewire <i>s</i> key to <i>m</i> key (depending on the operating system).
 
 <p>
-Computers are machines that can be modifed and repurposed by the user, without physical alternation. And you modify a computer by feeding it different programs. In this sense, <i>computer programs are just a special type of instructions, <b>meta-instructions</b></i>, i.e. instructions that tells the machine to change the way it interprets future instructions. 
+In this sense, programs are <i>components</i> of a computer as much as the CPU is. Programs contain <i>meta-instructions</i>, instructions to a computer about how it should handle instructions, which is necessary for its use.
 
 <p>
-Therefore, programming is really just "designing".
+Therefore, <i>programming</i> is analogous to <i>designing</i> mechanical or electrical machines. Programmers piece together elementary instructions to make a music player, the same way engineers wire resistors and buttons together to make a radio set. The difference is in the nature of parts used: eletronical engineers use tangible parts, while programmer give intangible instructions.
 
-<h2>II. The machine has a face</h2>
+<h2>II. Produce programs with programs</h2>
 
 <p>
-Have you noticed that we only rarely use computers to, you known, compute? Of course, underneath all software you use, the computer is really just computing on 0s and 1s, but what computers actually do today are quite vivid, and that is because computer have interfaces.
+So, what can the programmers instruct the computers to do?
+
+<p>
+In the beginning, there were only instructions directly provided by the computer hardware itself, called machine code. These instructions are implemented by connecting eletronic components in particular ways, and external instructions usually enter the eletronic computer system through keyboards (which transform mechanical pressure into eletronic pulses) or punched card readers (which transform brightness or opacity on punched cards), etc.
+
+<p>
+Here’s a snippet of machine code for MIPS architecture:
+
+<code><pre>
+000000 00001 00010 00110 00000 100000
+</pre></code>
+
+It means “adding the registers 1 and 2 and placing the result in register 6”. No, seriously.
+
+<p>
+Then programmers came up with an important idea: we want to give instructions to computers in a language similar to natural languages, but it’s really difficult to build electronic computers that understand more advanced languges; however, we can code in an advanced language, and translate the code to machine code, so that the machine understands it. How do we translate it? By writing a translation program, of course.
+
+<p>
+These translation programs are called <i>compilers</i>. With compilers, we can write code comprehensible to humans and produce code understandable by machines.
+
+<p>
+Here’s an example of a code in the C programming language that computes and displays the sum of 1, 2, 3, and 4:
+
+<code><pre>
+#include&lt;stdio.h>
+main() {
+    int result = 1 + 2 + 3 + 4;
+    printf("%u", result);
+}
+</pre></code>
+
+<p>
+It’s probably still a bit cryptic, but it certainly makes more sense than 0s and 1s, right?
+
+<p>
+Programming languages like C, ones that are more similar to human languages, are called “high-level” languages.
+
+<h2>III. Everything is a number</h2>
+
+<p>
+Armed with compilers, we can now efficiently instruct the computers to do mathematical computation, which was the original purpose of computers.
+
+<p>
+But what about Spotify, Netflix, and Google Maps? What do all these wonderful services have to do with numerical computations?
+
+<p>
+Well, as it turns out, numbers are quite versatile to represent things. Even if something is not a number, we can assign numbers to them. This is called <i>encoding</i>.
+
+<p>
+For example, Latin letters are not numbers, and not directly comprehensible to computers, but we can assign one number to each letter. In the widely used ASCII and UTF-8 encoding, <i>a</i> is 97, <i>b</i> is 98, etc.
+
+Therefore,
+<code><pre>
+hello
+</pre></code>
+
+can be stored in computers as
+<code><pre>
+104 101 108 108 111
+</pre></code>
+
+<p>
+When we need to view the text, the computer translates the numbers back to letters, a process called <i>decoding</i>, so that we never notice the transformation.
+
+<p>
+Similarly, a picture can be represented as a series of pixels, and a pixel can be represented with three numbers, one for brightness of red, one for green, and one for blue. A video, then, is just a series of pictures, which are series of pixels, which are triplets of numbers, which computers can handle.
+
+<h2>IIII. The e in e-mail</h2>
+
+<p>
+In our universe, the mainstream computers are <i>electronic</i>, which represent numbers with electric properties, such as voltage. This is very convenient, because before electronic computers, we had already been using electricity to drive long-range communication (radio and telephone), display images (television) and make sounds (speakers). It’s only natural that an electronic computer is connected to, say, an electronic screen display, which enables numbers stored in a computer, which is abstract, through its eletronic form, to control an image output, which is easily perceivable to humans.
+
+<p>
+Deep inside, electronic computers really just crunch numbers, but through screens, speakers, and network adapters, the numbers in a computer can produce images, make sounds and even influence other computers.
+
+<p>
+It’s conceivable that, in an alternative universe, one in which humans were stuck with mechanical computers, we would only use computers to solve mathematical problems and never bother to connect a computer to eletronic devices, rendering computers rather boring machines, unlike the omnipotent ones we know of today.
+
+<h2>V. Landscape of Programming</h2>
+
+<p>
+So, now you have a computer, which is incredibly good at computing numbers. It is connected to all sorts of devices like screens and speaker so that it can produce results in delightful forms. What then?
+
+<h3>The Infrastructure</h3>
+
+<p>
+Well, to start with, systems programmers make operating systems, or OSes, and drivers. These people are the bridge-builders and lighthouse maintainer for everyone else. Operating system is a program that provides many commonly used functions, such as time sharing (working on a project while listening to music? Thanks to your OS!). Drivers are programs that teach other programs how to control devices.
+
+<p>
+You can program a computer without OSes and drivers. After all, makers of the initial OSes didn’t have OSes. But most programmers today program for existing OSes, the same way most cooks buy knifes rather than forging steel from scratch.
+
+<p>
+System programmers usually use the C programming language or assembly languages, because they provide exact control of the hardware.
+
+<p>
+Then you also have makers of compilers and libraries. Compilers, as mentioned earlier, translate one language to another. With compilers, you can create all sorts of languages, and we did create many programming languages.
+
+<p>
+ Libraries are also programs, not intended to be used alone, but built for other programmers to pick up and make larger programs with. Libraries are like standardized screws and nails for programmers. You may also have heard about the word “framework”, which is fuzzy word, roughly referring to libraries with stronger architectural inclinations, like, the framework of a house.
+
+<h3>The Apps</h3>
+
+<p>
+Then you have application programmers, who, well, program applications. Almost everything you do on a computer are through applications, including your instant messenger, music player, and the browser you’re using to read this article.
+
+<p>
+Applications can be roughly divided into two sub-types: client applications and server applications. Client application runs on the computers of the user. Sometimes they work alone; sometimes they need assistance from other computers over the Internet. The programs running on the remote computers are called server applications.
+
+<p>
+The calculator app, for example, is a client software and it doesn’t need any network to properly function. However, your web browser, another client software, is quite useless, unless you connect the computer to the Internet and ask your browser to go to a URL. Your browser is actually cooperating with another program running on the other side of the network to bring you the content.
+
+<p>
+Why do we have this separation of client and server programs? Well, sometimes your computer cannot or should not do all the work. For example, servers of Google Map store maps and satelite images of all over the world, which take up millions of gigabytes of storage, which your computer is unlikely to have.
+
+<p>
+Every computer can be a server. If you use P2P programs (such as BitTorrent), you machine is a server that serve other users as well.
 
 
+<h3>The Web</h3>
+
+<p>
+Your web browser is not only an application, but due to historical coincidences, also serves as an operating system for many other programs, called “web applications”, or webapps.
+
+<p>
+Let me explain.
+
+<p>
+Initially, web browsers just fetch a text file in HTML format from another computer and display it on your screen. HTML is not a programming language, but rather a extension of plain text, most notably allowing hyperlinks. It was envisioned that HTML files would link to each other, forming a web of documents, called the World Wide Web.
+
+<p>
+Then people get unsatisfied with HTML as it’s too limiting. What do programmers do when they’re not satisfied with a language? They build a new one. So JavaScript was born, which allows HTML authors to build custom functions not directly provided by the browsers, such as form validation or popping dialogs. Eventually people start to build very complex programs in JavaScript, such as Facebook and Google Docs, which are programs executed by the browsers, not directly by the operating system.
+
+<p>
+There were alternative proposals to expand the web, but VBScript, Java applet, and Flash all died out for technical and non-technical reasons. JavaScript is now the only language understandable by all modern browsers, and is almost omnipresent.
+
+
+<h2>VI. Summary</h2>
+
+<p>
+Many machines react to users’ instructions, but their reaction is defined by their physical structure. Computers, unlike other machines, can take instructions and change their reaction to future instructions. These instructions are called programs.
+
+<p>
+Operating systems, drivers, libraries, and frameworks are all programs intended as assistance for buliding other programs. Applications are also programs: client applications interact with the user, while server applications, running in servers, support client applications.
+
+<p>
+Computers only understand machine languages, which are hard to use by humans. Programmers invent easy-to-use languages, called high-level langauges, and write programs, called compilers, to translate high-level languages to machine languages.
+
+
+<h2>Notes</h2>
+
+<ol>
+
+<li>In this article, unspecified “computer” refers to binary digital eletronic computers, the most common computer today. Some computers are not binary but <a href="https://en.wikipedia.org/wiki/Ternary_computer">ternary</a> (3-based) or <a href="https://en.wikipedia.org/wiki/Decimal_computer">decimal</a> (10-based); Some are not digital but <a href="https://www.wikiwand.com/en/Analog_computer">analog</a> (having continuous and infinite states); Some are not eletronical but <a href="https://en.wikipedia.org/wiki/Mechanical_computer">mechanical</a> (operating on mechanical parts).
+
+<li>Only a subset of JavaScript works across all devices, as JavaScript engines don't always get updated.
+
+</ol>
 <!--=include ../shared/partials/footer.html -->
