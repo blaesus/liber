@@ -39,14 +39,14 @@ Why?
 You see, it has always been possible to give instructions to machines: you step on the brake and the car decelerates; you press the <i>s</i> key and the typewriter imprints an <i>s</i> on the paper.
 
 <p>
-What makes computers special is that you can change the way they handle <i>future instructions</i>, without physical alterations. The brake pedal on a car always brakes (thankfully), no matter how you use the car, just as the <i>s</i> key on a typewriter always means letter <i>s</i>. This is because a car and a typewriter are defined solely by their <i>physical structures</i>. If you are to pull a prank on a friend and make his typewriter type <i>m</i> when <i>s</i> is pressed, you’ll have to rewire its mechanical parts, perhaps even having to redesign the whole machine.
+What makes computers special is that you can change the way they handle <i>future instructions</i>, without physical alterations. The brake pedal on a car always brakes (thankfully), no matter how you use the car, just as the <i>s</i> key on a typewriter always types letter <i>s</i>. This is because a car and a typewriter are defined solely by their <i>physical structures</i>. If you are to pull a prank on a friend and make his typewriter type <i>m</i> when <i>s</i> is pressed, you’ll have to rewire its mechanical parts, perhaps even having to redesign the whole machine.
 
 
 <p>
-Computers are a bit different. You can input different programs and change how they work. On a computer, the <i>s</i> key could mean letter <i>s</i> in MS Word, or “go back” in a shooter game, or “stop” in a music player. It depends on which program you’re running. On a computer, it only takes a few lines of code to rewire <i>s</i> key to <i>m</i> key (depending on the operating system).
+Computers are a bit different, as you can input different programs and change how they work. On a computer, the <i>s</i> key could mean letter <i>s</i> in Microsoft Word, or “go back” in a shooter game, or “stop” in a music player. It depends on which program you’re running.
 
 <p>
-In this sense, programs are <i>components</i> of a computer as much as the CPU is. Programs contain <i>meta-instructions</i>, instructions to a computer about how it should handle instructions, which is necessary for its use.
+In this sense, programs are <i>components</i> of a computer as much as the CPU is. Programs contain <i>meta-instructions</i>, instructions to a computer about how it should handle instructions, which are just as essential as the tangible parts.
 
 <p>
 Therefore, <i>programming</i> is analogous to <i>designing</i> mechanical or electrical machines. Programmers piece together elementary instructions to make a music player, the same way engineers wire resistors and buttons together to make a radio set. The difference is in the nature of parts used: eletronical engineers use tangible parts, while programmer give intangible instructions.
@@ -69,13 +69,16 @@ Here’s a snippet of machine code for MIPS architecture:
 It means “adding the registers 1 and 2 and placing the result in register 6”. No, seriously.
 
 <p>
-Then programmers came up with an important idea: we want to give instructions to computers in a language similar to natural languages, but it’s really difficult to build electronic computers that understand more advanced languges; however, we can code in an advanced language, and translate the code to machine code, so that the machine understands it. How do we translate it? By writing a translation program, of course.
+Machine code is like these because chip designers have to implement these code by wiring eletronical components in certain ways. 0s and 1s, while difficult for humans, are easy to implement with eletronical components.
 
 <p>
-These translation programs are called <i>compilers</i>. With compilers, we can write code comprehensible to humans and produce code understandable by machines.
+Then programmers came up with an important idea: we want to give instructions to computers in a language similar to natural languages, but it’s really difficult to build electronic computers that directly understand more advanced languges; however, we can code in an “easy” language, and then translate the code to machine code. How do we translate it? By writing a translation program, of course.
 
 <p>
-Here’s an example of a code in the C programming language that computes and displays the sum of 1, 2, 3, and 4:
+These translation programs are called <i>compilers</i>. With compilers, we can write code understandable to humans and produce code understandable by machines.
+
+<p>
+Here’s an example of a program in the C programming language that computes and displays the sum of 1, 2, 3, and 4:
 
 <code><pre>
 #include&lt;stdio.h>
@@ -90,6 +93,9 @@ It’s probably still a bit cryptic, but it certainly makes more sense than 0s a
 
 <p>
 Programming languages like C, ones that are more similar to human languages, are called “high-level” languages.
+
+<p>
+Most programming languages you'll encounter today are high level languages, which are specifically designed for human use. Perhaps one day automatic natural language processing would progressed to such a degree that we can give command to computers with just natural language. Before then, these high-level languages are our best tool for programming.
 
 <h2>III. Everything is a number</h2>
 
