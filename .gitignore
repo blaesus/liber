@@ -4,3 +4,8 @@
 node_modules
 .publish
 .built
+.cache
+dist
+__pycache__
+.ipynb_checkpoints
+cache

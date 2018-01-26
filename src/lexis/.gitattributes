@@ -1,0 +1,4 @@
+data/ filter=lfs diff=lfs merge=lfs -text
+data/failures.json filter=lfs diff=lfs merge=lfs -text
+data/lemmata.json filter=lfs diff=lfs merge=lfs -text
+data/lexes.json filter=lfs diff=lfs merge=lfs -text

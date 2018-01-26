@@ -11,13 +11,20 @@ const htmlmin = require('gulp-htmlmin')
 const watch = require('gulp-watch')
 const webserver = require('gulp-webserver')
 const shell = require('gulp-shell')
-var gulpIgnore = require('gulp-ignore')
-
+const gulpIgnore = require('gulp-ignore')
+const ts = require('gulp-typescript')
 
 gulp.task('copy', () => {
   rimraf.sync('./.built/**/*')
   return gulp.src(['./src/**/*'])
     .pipe(gulp.dest('./.built/'))
+})
+
+const tsProject = ts.createProject('tsconfig.json', {outDir: '.'})
+gulp.task('ts', ['copy'], () => {
+  return gulp.src('./.built/**/*.ts')
+      .pipe(tsProject())
+      .pipe(gulp.dest('./.built'))
 })
 
 gulp.task('insert-html-partials', ['copy'], () => {
@@ -28,7 +35,7 @@ gulp.task('insert-html-partials', ['copy'], () => {
     .pipe(gulp.dest('.'))
 })
 
-gulp.task('build', ['copy', 'insert-html-partials'], () => {
+gulp.task('build', ['copy', 'ts', 'insert-html-partials'], () => {
 })
 
 gulp.task('import-css', ['copy'], () => {
