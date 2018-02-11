@@ -1,0 +1,462 @@
+{
+    "inflectiones" : {
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amō"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amās"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amat"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amāmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amātis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|praesens|imperfectivus" : [
+            "amant"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābam"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābās"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābat"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābāmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābātis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|praeteritus|imperfectivus" : [
+            "amābant"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābō"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābis"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābimus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābitis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|futurus|imperfectivus" : [
+            "amābunt"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvī"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvistī",
+            "amāsti"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvimus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvistis",
+            "amāstis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|praesens|perfectivus" : [
+            "amāvērunt",
+            "amāvēre"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāveram"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāverās"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāverat"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāverāmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāverātis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|praeteritus|perfectivus" : [
+            "amāverant"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāverō"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāveris"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāverit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāverimus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāveritis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|activa|futurus|perfectivus" : [
+            "amāverint"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amor"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amāris",
+            "amāre"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amātur"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amāmur"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amāminī"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|praesens|imperfectivus" : [
+            "amantur"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābar"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābāris",
+            "amābāre"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābātur"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābāmur"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābāminī"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|praeteritus|imperfectivus" : [
+            "amābantur"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amābor"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amāberis",
+            "amābere"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amābitur"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amābimur"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amābiminī"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|futurus|imperfectivus" : [
+            "amābuntur"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus sum"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus es"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus est"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus sumus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus estis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|praesens|perfectivus" : [
+            "amātus sunt"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus eram"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus erās"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus erat"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus erāmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus erātis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|praeteritus|perfectivus" : [
+            "amātus erant"
+        ],
+        "verbum|–|singularis|prima|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus erō"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus eris"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus erit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus erimus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus eritis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|indicativus|passiva|futurus|perfectivus" : [
+            "amātus erunt"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "amem"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "amēs"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "amet"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "amēmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "amētis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|activa|praesens|imperfectivus" : [
+            "ament"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amārem"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amārēs"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amāret"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amārēmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amārētis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|activa|praeteritus|imperfectivus" : [
+            "amārent"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverim"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverīs"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverīmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverītis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|activa|praesens|perfectivus" : [
+            "amāverint"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvissem",
+            "amāssem"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvissēs",
+            "amāsses"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvisset",
+            "amāsset"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvissēmus",
+            "amāssemus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvissētis",
+            "amāssetis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|activa|praeteritus|perfectivus" : [
+            "amāvissent",
+            "amāssent"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amer"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amēris",
+            "amēre"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amētur"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amēmur"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amēminī"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|passiva|praesens|imperfectivus" : [
+            "amentur"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārer"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārēris",
+            "amārēre"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārētur"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārēmur"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārēminī"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|passiva|praeteritus|imperfectivus" : [
+            "amārentur"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sim"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sīs"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sit"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sīmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sītis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|passiva|praesens|perfectivus" : [
+            "amātus sint"
+        ],
+        "verbum|–|singularis|prima|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus essem"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus essēs"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus esset"
+        ],
+        "verbum|–|pluralis|prima|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus essēmus"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus essētis"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|coniunctivus|passiva|praeteritus|perfectivus" : [
+            "amātus essent"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|imperativus|activa|praesens|imperfectivus" : [
+            "amā"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|imperativus|activa|praesens|imperfectivus" : [
+            "amāte"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|imperativus|activa|futurus|imperfectivus" : [
+            "amātō"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|imperativus|activa|futurus|imperfectivus" : [
+            "amātō"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|imperativus|activa|futurus|imperfectivus" : [
+            "amātōte"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|imperativus|activa|futurus|imperfectivus" : [
+            "amantō"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|imperativus|passiva|praesens|imperfectivus" : [
+            "amāre"
+        ],
+        "verbum|–|pluralis|secunda|–|–|–|imperativus|passiva|praesens|imperfectivus" : [
+            "amāminī"
+        ],
+        "verbum|–|singularis|secunda|–|–|–|imperativus|passiva|futurus|imperfectivus" : [
+            "amātor"
+        ],
+        "verbum|–|singularis|tertia|–|–|–|imperativus|passiva|futurus|imperfectivus" : [
+            "amātor"
+        ],
+        "verbum|–|pluralis|tertia|–|–|–|imperativus|passiva|futurus|imperfectivus" : [
+            "amantor"
+        ]
+    },
+    "interpretationes" : {
+        "Anglica" : [
+            {
+                "significatio" : "I love",
+                "exempli" : []
+            },
+            {
+                "significatio" : "I am fond of, like",
+                "exempli" : []
+            },
+            {
+                "significatio" : "I am under obligation to; I am obliged to",
+                "exempli" : []
+            },
+            {
+                "significatio" : "(with infinitive) to enjoy, be accustomed",
+                "exempli" : []
+            }
+        ]
+    },
+    "lexicographia" : {
+        "lemma" : "amō",
+        "radices" : [
+            "amō",
+            "amāre",
+            "amāvī",
+            "amātum"
+        ],
+        "etymologia" : [
+            "Probably from Proto-Indo-European *am-a-, *am- (“mother, aunt”), a lost nursery-word of the papa-type. Compare amita (“aunt”), Old High German amma (“nurse”). Alternatively, O. Hackstein suggests Proto-Indo-European *h₂emh₃- (“seize”)."
+        ],
+        "pronunciatio" : [],
+        "references" : [],
+        "lemmataAlterae" : [],
+        "thema" : "ā",
+        "deponens" : "non-deponens",
+        "numquamPerfectum" : false,
+        "noPassive" : false
+    },
+    "pars" : "verbum",
+    "lemmataAlii" : {
+        "supinum" : "amātū",
+        "gerundium" : "amandum",
+        "infinitivum" : "amāre",
+        "participii" : {
+            "praesensActiva" : "amāns",
+            "futurusActiva" : "amātūrus",
+            "praeteritusPassiva" : "amātus",
+            "futurusPassiva" : "amandus"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+[submodule "src/lingua/corpus/treebank_data"]
+	path = src/lingua/corpus/treebank_data
+	url = https://github.com/PerseusDL/treebank_data.git
+[submodule "src/lingua/corpus/proiel-treebank"]
+	path = src/lingua/corpus/proiel-treebank
+	url = https://github.com/proiel/proiel-treebank.git
